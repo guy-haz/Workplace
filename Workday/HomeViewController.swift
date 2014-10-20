@@ -8,12 +8,21 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UIScrollViewDelegate {
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var scrollViewtop: UIScrollView!
+class TodayViewController: UIViewController, UIScrollViewDelegate {
+    @IBOutlet weak var calendarScrollView: UIScrollView!
+    @IBOutlet weak var taskScrollView: UIScrollView!
+    
+    @IBOutlet weak var calendarImage: UIImageView!
 
-    @IBOutlet weak var task1: UIImageView!
     @IBOutlet weak var calendarHeader: UIImageView!
+    @IBOutlet weak var task1: UIButton!
+    @IBOutlet weak var task2: UIButton!
+    @IBOutlet weak var task3: UIButton!
+    
+    var tasktoSegue : UIButton!
+    
+    var taskCenter: CGPoint!
+    
     var imageView: UIImageView!
 //    
 //    @IBAction func onLongPress1(sender: UILongPressGestureRecognizer) {
@@ -42,50 +51,98 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
       
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = CGSizeMake(375, 1151)
+        calendarScrollView.contentSize = calendarImage.image!.size
         
-        scrollViewtop.contentSize = CGSizeMake(375, 320)
+        var task1Height = task1.imageView!.image!.size.height
+        var task2Height = task2.imageView!.image!.size.height
+        var task3Height = task3.imageView!.image!.size.height
         
-         scrollViewtop.delegate = self
+        var scrollHeight = task1Height + task2Height + task3Height
+        
+        println("One is \(task1Height)")
+        println("Two is \(task2Height)")
+        println("Three is \(task3Height)")
+
+        println("total is \(scrollHeight)")
+        
+        taskScrollView.contentSize = CGSize(width: 375, height: scrollHeight)
+        
+         taskScrollView.delegate = self
         // Do any additional setup after loading the view.
     }
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        println("scrolling")
+//    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+//        println("scrolling")
+//        
+//        UIView.animateWithDuration(0.3, animations: { () -> Void in
+//            
+//            self.calendarScrollView.frame.offset(dx: 0, dy: 70)
+//            self.calendarHeader.frame.offset(dx: 0, dy: 70)
+//            self.taskScrollView.frame.size.height = 278
+//        })
+//    }
+    
+    
+//    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        UIView.animateWithDuration(0.3, animations: { () -> Void in
+//            
+//            self.calendarScrollView.frame.offset(dx: 0, dy: -70)
+//            self.calendarHeader.frame.offset(dx: 0, dy: -70)
+//            self.taskScrollView.frame.size.height = 208
+//            
+//        })
+//    }
+    
+    @IBAction func didPanTask(sender: UIPanGestureRecognizer) {
         
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
+        tasktoSegue = sender.view as UIButton
+        
+        var location = sender.locationInView(view)
+        var translation = sender.translationInView(view)
+        var velocity = sender.velocityInView(view)
+        
+        if sender.state == UIGestureRecognizerState.Began {
             
-            self.scrollView.frame.offset(dx: 0, dy: 70)
-            self.calendarHeader.frame.offset(dx: 0, dy: 70)
-            self.scrollViewtop.frame.size.height = 278
-        })
-    }
-    
-    
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            taskCenter = tasktoSegue.center
             
-            self.scrollView.frame.offset(dx: 0, dy: -70)
-            self.calendarHeader.frame.offset(dx: 0, dy: -70)
-            self.scrollViewtop.frame.size.height = 208
+        } else if sender.state == UIGestureRecognizerState.Changed {
             
-        })
+            tasktoSegue.center.x = translation.x + taskCenter.x
+            var position = tasktoSegue.frame.origin.x
+            println("The position is \(position)")
+
+            
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                
+                self.tasktoSegue.frame.origin.x = 0
+
+            })
+            
+        }
+        
+        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//last one
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
