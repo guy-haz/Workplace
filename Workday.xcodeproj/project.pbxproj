@@ -14,6 +14,11 @@
 		7B8CEE5C19F474BE00BCC156 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B8CEE5A19F474BE00BCC156 /* LaunchScreen.xib */; };
 		7B8CEE6819F474BE00BCC156 /* WorkdayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CEE6719F474BE00BCC156 /* WorkdayTests.swift */; };
 		7B8CEE7219F47C1A00BCC156 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CEE7119F47C1A00BCC156 /* HomeViewController.swift */; };
+		BA8536E119F4AF290026DC17 /* TomorrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E019F4AF290026DC17 /* TomorrowViewController.swift */; };
+		BA8536E319F4AF730026DC17 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E219F4AF730026DC17 /* MainViewController.swift */; };
+		BA8536E519F4AFA20026DC17 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */; };
+		BA8536E719F4AFC90026DC17 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E619F4AFC90026DC17 /* AllTasksViewController.swift */; };
+		BA8536E919F4C0890026DC17 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E819F4C0890026DC17 /* TaskDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,11 @@
 		7B8CEE6619F474BE00BCC156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8CEE6719F474BE00BCC156 /* WorkdayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkdayTests.swift; sourceTree = "<group>"; };
 		7B8CEE7119F47C1A00BCC156 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BA8536E019F4AF290026DC17 /* TomorrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomorrowViewController.swift; sourceTree = "<group>"; };
+		BA8536E219F4AF730026DC17 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BA8536E619F4AFC90026DC17 /* AllTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
+		BA8536E819F4C0890026DC17 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,11 @@
 				7B8CEE5119F474BE00BCC156 /* AppDelegate.swift */,
 				7B8CEE5319F474BE00BCC156 /* ViewController.swift */,
 				7B8CEE5519F474BE00BCC156 /* Main.storyboard */,
+				BA8536E819F4C0890026DC17 /* TaskDetailViewController.swift */,
+				BA8536E619F4AFC90026DC17 /* AllTasksViewController.swift */,
+				BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */,
+				BA8536E219F4AF730026DC17 /* MainViewController.swift */,
+				BA8536E019F4AF290026DC17 /* TomorrowViewController.swift */,
 				7B8CEE7119F47C1A00BCC156 /* HomeViewController.swift */,
 				7B8CEE5819F474BE00BCC156 /* Images.xcassets */,
 				7B8CEE5A19F474BE00BCC156 /* LaunchScreen.xib */,
@@ -216,8 +231,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8CEE5419F474BE00BCC156 /* ViewController.swift in Sources */,
+				BA8536E719F4AFC90026DC17 /* AllTasksViewController.swift in Sources */,
 				7B8CEE5219F474BE00BCC156 /* AppDelegate.swift in Sources */,
 				7B8CEE7219F47C1A00BCC156 /* HomeViewController.swift in Sources */,
+				BA8536E119F4AF290026DC17 /* TomorrowViewController.swift in Sources */,
+				BA8536E319F4AF730026DC17 /* MainViewController.swift in Sources */,
+				BA8536E919F4C0890026DC17 /* TaskDetailViewController.swift in Sources */,
+				BA8536E519F4AFA20026DC17 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +429,7 @@
 				7B8CEE6D19F474BE00BCC156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B8CEE6E19F474BE00BCC156 /* Build configuration list for PBXNativeTarget "WorkdayTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +438,7 @@
 				7B8CEE7019F474BE00BCC156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
