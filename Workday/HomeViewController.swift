@@ -19,6 +19,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var task2: UIButton!
     @IBOutlet weak var task3: UIButton!
     
+    var tasktoSegue : UIButton!
+    
     var taskCenter: CGPoint!
     
     var imageView: UIImageView!
@@ -93,25 +95,27 @@ class TodayViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func didPanTask(sender: UIPanGestureRecognizer) {
         
+        tasktoSegue = sender.view as UIButton
+        
         var location = sender.locationInView(view)
         var translation = sender.translationInView(view)
         var velocity = sender.velocityInView(view)
         
         if sender.state == UIGestureRecognizerState.Began {
             
-            taskCenter = task1.center
+            taskCenter = tasktoSegue.center
             
         } else if sender.state == UIGestureRecognizerState.Changed {
             
-            task1.center.x = translation.x + taskCenter.x
-            var position = task1.frame.origin.x
+            tasktoSegue.center.x = translation.x + taskCenter.x
+            var position = tasktoSegue.frame.origin.x
             println("The position is \(position)")
 
             
         } else if sender.state == UIGestureRecognizerState.Ended {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 
-                self.task1.frame.origin.x = 0
+                self.tasktoSegue.frame.origin.x = 0
 
             })
             
