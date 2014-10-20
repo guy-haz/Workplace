@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>465B2524-EC72-461A-94C6-9982F50C0B80</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Workday</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C7E87DC1D1DE23FA74678BA99096897EF53679D9</key>
+		<string>https://github.com/hamzasidd/Workday.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Workday.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C7E87DC1D1DE23FA74678BA99096897EF53679D9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hamzasidd/Workday.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C7E87DC1D1DE23FA74678BA99096897EF53679D9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C7E87DC1D1DE23FA74678BA99096897EF53679D9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Workday</string>
+		</dict>
+	</array>
+</dict>
+</plist>
