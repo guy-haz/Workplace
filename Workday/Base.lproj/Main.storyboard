@@ -38,40 +38,31 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QHD-IO-rHc">
-                                        <rect key="frame" x="0.0" y="70" width="375" height="113"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <gestureRecognizers/>
-                                        <state key="normal" image="task-2">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="Mdo-pf-kd4" appends="YES" id="6Pv-tN-Omb"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1wg-Kv-WmF">
-                                        <rect key="frame" x="0.0" y="183" width="375" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <gestureRecognizers/>
-                                        <state key="normal" image="task-3">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="iK7-40-Est" appends="YES" id="gUk-MM-BGi"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rdj-XD-8dE">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="task-1" id="wKj-qy-Tdl">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
-                                        <state key="normal" image="task-1">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="RMv-E0-6Ew" appends="YES" id="zFr-Ks-qvh"/>
-                                            <segue destination="vDb-ZU-9LM" kind="modal" modalTransitionStyle="crossDissolve" id="dz6-jQ-50B"/>
+                                            <outletCollection property="gestureRecognizers" destination="cNI-sj-oIh" appends="YES" id="Ypz-G9-wnX"/>
+                                            <outletCollection property="gestureRecognizers" destination="8uX-JP-QR0" appends="YES" id="Xpz-wQ-vwi"/>
                                         </connections>
-                                    </button>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="task-2" id="06e-Pm-wCy">
+                                        <rect key="frame" x="0.0" y="70" width="375" height="113"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="1NG-NW-iaQ" appends="YES" id="Bhz-E3-9WV"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="task-3" id="LpA-5F-y3F">
+                                        <rect key="frame" x="0.0" y="183" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="0fJ-xc-LjJ" appends="YES" id="QLm-Gt-qd6"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84637248516082764" green="0.86642879247665405" blue="0.88718420267105103" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
@@ -92,28 +83,36 @@
                         <outlet property="calendarHeader" destination="NQy-bh-GOx" id="d1s-tb-Bso"/>
                         <outlet property="calendarImage" destination="VOM-AE-MEG" id="RbU-uz-cXJ"/>
                         <outlet property="calendarScrollView" destination="vqF-m4-9w2" id="Uss-ds-kEl"/>
-                        <outlet property="task1" destination="rdj-XD-8dE" id="GSf-Kw-jlN"/>
-                        <outlet property="task2" destination="QHD-IO-rHc" id="Pug-7m-ubx"/>
-                        <outlet property="task3" destination="1wg-Kv-WmF" id="GgK-Zj-spj"/>
+                        <outlet property="task1" destination="wKj-qy-Tdl" id="3Bp-Xh-eTE"/>
+                        <outlet property="task1Gesture" destination="cNI-sj-oIh" id="wGx-vN-X2M"/>
+                        <outlet property="task2" destination="06e-Pm-wCy" id="gAb-7s-5Yd"/>
+                        <outlet property="task2Gesture" destination="1NG-NW-iaQ" id="OO0-pb-Zce"/>
+                        <outlet property="task3" destination="LpA-5F-y3F" id="Hkq-du-c9Z"/>
+                        <outlet property="task3Gesture" destination="0fJ-xc-LjJ" id="1uR-cJ-yTQ"/>
                         <outlet property="taskScrollView" destination="iBd-Rt-5jv" id="9R7-wj-ED8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="RMv-E0-6Ew" userLabel="Task 1 Pan Gesture Recognizer">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="cNI-sj-oIh" userLabel="Task 1 Pan Gesture Recognizer">
                     <connections>
-                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="KFY-Qw-9bS"/>
+                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="cfr-N7-eiz"/>
                     </connections>
                 </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Mdo-pf-kd4" userLabel="Task 2 Pan Gesture Recognizer">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="1NG-NW-iaQ" userLabel="Task 2 Pan Gesture Recognizer">
                     <connections>
-                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="m5P-1q-gFe"/>
+                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="qhG-JE-FCx"/>
                     </connections>
                 </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="iK7-40-Est" userLabel="Task 3 Pan Gesture Recognizer">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="0fJ-xc-LjJ" userLabel="Task 3 Pan Gesture Recognizer">
                     <connections>
-                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="60h-yA-jwg"/>
+                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="7mm-YB-Mhz"/>
                     </connections>
                 </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="8uX-JP-QR0" userLabel="Task 1 Long Press Gesture Recognizer">
+                    <connections>
+                        <action selector="onLongPress1:" destination="vXZ-lx-hvc" id="7zU-vj-f7X"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="61.5" y="783.5"/>
         </scene>
@@ -198,7 +197,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="CP8-px-IF8">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" id="CP8-px-IF8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
