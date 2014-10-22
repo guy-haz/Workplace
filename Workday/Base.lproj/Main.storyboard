@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vL7-R6-ORZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vL7-R6-ORZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ProximaNova-Regular.otf">
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Today View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -162,7 +168,37 @@
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="settings" id="BRl-bb-JtB">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="689"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Dkh-nr-2zF" appends="YES" id="Vvt-QQ-k2n"/>
+                                        </connections>
                                     </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Greg Lambwool" placeholder="Name" minimumFontSize="17" id="Peh-3b-7x4">
+                                        <rect key="frame" x="125" y="76" width="240" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="didEndTextField:" destination="FpC-3v-QbV" eventType="editingDidEndOnExit" id="mX7-ic-ipW"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="greg@codepath.com" placeholder="Name" minimumFontSize="17" id="Bgj-lu-Q0Y">
+                                        <rect key="frame" x="125" y="134" width="240" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="didEndTextField:" destination="FpC-3v-QbV" eventType="editingDidEnd" id="hEA-Fn-H49"/>
+                                        </connections>
+                                    </textField>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="4na-Sd-jCK">
+                                        <rect key="frame" x="308" y="482" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="roF-OM-Qyg">
+                                        <rect key="frame" x="308" y="538" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
@@ -181,11 +217,20 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="emailField" destination="Bgj-lu-Q0Y" id="mGS-Pt-POb"/>
+                        <outlet property="eventsSwitch" destination="4na-Sd-jCK" id="fU4-kt-5uq"/>
+                        <outlet property="nameField" destination="Peh-3b-7x4" id="c8l-xe-L1Y"/>
                         <outlet property="scrollView" destination="kSt-Sz-eNV" id="tzo-KT-mH9"/>
                         <outlet property="settingsImage" destination="BRl-bb-JtB" id="KiE-yM-fSK"/>
+                        <outlet property="tasksSwitch" destination="roF-OM-Qyg" id="ksh-qe-vfx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdO-KU-wJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Dkh-nr-2zF">
+                    <connections>
+                        <action selector="onTap:" destination="FpC-3v-QbV" id="MUT-q1-Xhd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="61.5" y="43.5"/>
         </scene>
