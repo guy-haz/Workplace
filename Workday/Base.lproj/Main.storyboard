@@ -168,18 +168,28 @@
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="settings" id="BRl-bb-JtB">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="689"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Dkh-nr-2zF" appends="YES" id="Vvt-QQ-k2n"/>
+                                        </connections>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Greg Lambwool" placeholder="Name" minimumFontSize="17" id="Peh-3b-7x4">
                                         <rect key="frame" x="125" y="76" width="240" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="didEndTextField:" destination="FpC-3v-QbV" eventType="editingDidEndOnExit" id="mX7-ic-ipW"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="greg@codepath.com" placeholder="Name" minimumFontSize="17" id="Bgj-lu-Q0Y">
                                         <rect key="frame" x="125" y="134" width="240" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="didEndTextField:" destination="FpC-3v-QbV" eventType="editingDidEnd" id="hEA-Fn-H49"/>
+                                        </connections>
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="4na-Sd-jCK">
                                         <rect key="frame" x="308" y="482" width="51" height="31"/>
@@ -216,6 +226,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdO-KU-wJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Dkh-nr-2zF">
+                    <connections>
+                        <action selector="onTap:" destination="FpC-3v-QbV" id="MUT-q1-Xhd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="61.5" y="43.5"/>
         </scene>
