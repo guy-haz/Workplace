@@ -13,6 +13,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     @IBOutlet weak var taskScrollView: UIScrollView!
     
     @IBOutlet weak var calendarImage: UIImageView!
+    @IBOutlet weak var placedTask: UIView!
 
     @IBOutlet weak var calendarHeader: UIImageView!
     @IBOutlet weak var task1: UIImageView!
@@ -40,6 +41,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         
         var location = sender.locationInView(view)
         
+        
         if sender.state == UIGestureRecognizerState.Began {
             
             println("longpress began at \(location)")
@@ -49,8 +51,25 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             task1Copy = UIImageView(frame: task1.frame)
             task1Copy.image = task1.image
             //transform it
-            task1Copy.transform = CGAffineTransformMakeScale(1.1, 1.1)
+            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: nil, animations:{ () -> Void in
+                self.task1Copy.transform = CGAffineTransformMakeScale(1.05, 1.05)
+            }, completion: nil)
+            
             view.addSubview(task1Copy)
+            
+            
+            //Adding a shadow on the copy
+            task1Copy.layer.shadowColor = UIColor.darkGrayColor().CGColor
+            task1Copy.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+            task1Copy.layer.shadowOpacity = 0.7
+            task1Copy.layer.shadowRadius = 2
+            task1Copy.layer.masksToBounds = true
+            task1Copy.clipsToBounds = false
+            
+            //we need to make sure the duplicate is placed in the right place at beginning, before it was only placed in the correct location on change
+            task1Copy.center.x = originalPressDownLocation.x
+            task1Copy.center.y = originalPressDownLocation.y
+            
             
         } else if sender.state == UIGestureRecognizerState.Changed {
             
@@ -60,9 +79,32 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             task1Copy.center.x = originalPressDownLocation.x - translation.x
             task1Copy.center.y = originalPressDownLocation.y - translation.y
             
+            //this will make the calendar scroll when the task is dragged to the bottom of the screen, and the velocity is taking into account the direction (downward in this case)
+            if task1Copy.center.y > 602 {
+                println("welcome to the bottom")
+                calendarScrollView.contentOffset.y  = calendarScrollView.contentOffset.y + 10
+            }
+            
+            else if task1Copy.center.y > 370 && task1Copy.center.y < 385{
+                println("welcome to the bottom")
+                calendarScrollView.contentOffset.y  = calendarScrollView.contentOffset.y - 10
+            }
+            
+            //if the user is moving the object up, the calendar should scroll up, the reason it is between 396 and 602, is in case the user goes back to the task scrollview, the bottom scrollview will stop scrolling
+            
+            
+            
+            
+         
+            
             
         } else if sender.state == UIGestureRecognizerState.Ended {
             
+            //fade out the original copy when it is placed
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                  self.task1Copy.alpha = 0
+            })
+          
             
             
         }
@@ -106,6 +148,12 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarScrollView.contentSize = calendarImage.image!.size
+        
+        //make sure that the scrollview starts at 1PM (current time is 12.18 PM)
+        calendarScrollView.contentOffset.y = 550
+        
+       
+        
         
         var task1Height = task1.image!.size.height
         var task2Height = task2.image!.size.height
@@ -153,7 +201,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 //        })
 //    }
     
-    /*-------------Turning on this shit------------------------------*/
+    /*---------Turning on simultaneous gestures--------------------------*/
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer!, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer!) -> Bool {
         return true
