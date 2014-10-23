@@ -140,10 +140,28 @@
                                     <action selector="didPressBack:" destination="vDb-ZU-9LM" eventType="touchUpInside" id="MpV-39-Dnr"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="HI6-YI-2rr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="604"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-card-task" id="vtS-G0-PpU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-card-nav" id="nSO-hV-fxd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="scrollView" destination="HI6-YI-2rr" id="sq4-3F-Ah0"/>
+                        <outlet property="taskImage" destination="vtS-G0-PpU" id="WpU-db-903"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yeV-SN-5D2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -361,6 +379,8 @@
         <image name="task-2" width="375" height="113"/>
         <image name="task-3" width="375" height="70"/>
         <image name="tasks-header" width="375" height="40"/>
+        <image name="trello-card-nav" width="375" height="64"/>
+        <image name="trello-card-task" width="375" height="871"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

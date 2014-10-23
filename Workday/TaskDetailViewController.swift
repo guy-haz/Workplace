@@ -10,10 +10,14 @@ import UIKit
 
 class TaskDetailViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var taskImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        scrollView.contentSize = taskImage.image!.size
     }
 
     override func didReceiveMemoryWarning() {
