@@ -206,7 +206,7 @@
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <action selector="didEndTextField:" destination="FpC-3v-QbV" eventType="editingDidEnd" id="hEA-Fn-H49"/>
+                                            <action selector="didEndTextField:" destination="FpC-3v-QbV" eventType="editingDidEndOnExit" id="DXF-dY-rr3"/>
                                         </connections>
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="4na-Sd-jCK">

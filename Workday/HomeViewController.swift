@@ -103,6 +103,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             //fade out the original copy when it is placed
             UIView.animateWithDuration(0.2, animations: { () -> Void in
                   self.task1Copy.alpha = 0
+                
+                //
             })
           
             
