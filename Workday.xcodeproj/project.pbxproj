@@ -29,7 +29,7 @@
 		7B8CEE5919F474BE00BCC156 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8CEE5819F474BE00BCC156 /* Images.xcassets */; };
 		7B8CEE5C19F474BE00BCC156 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B8CEE5A19F474BE00BCC156 /* LaunchScreen.xib */; };
 		7B8CEE6819F474BE00BCC156 /* WorkdayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CEE6719F474BE00BCC156 /* WorkdayTests.swift */; };
-		7B8CEE7219F47C1A00BCC156 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CEE7119F47C1A00BCC156 /* HomeViewController.swift */; };
+		7B8CEE7219F47C1A00BCC156 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CEE7119F47C1A00BCC156 /* TodayViewController.swift */; };
 		BA8536E119F4AF290026DC17 /* TomorrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E019F4AF290026DC17 /* TomorrowViewController.swift */; };
 		BA8536E319F4AF730026DC17 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E219F4AF730026DC17 /* MainViewController.swift */; };
 		BA8536E519F4AFA20026DC17 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */; };
@@ -73,7 +73,7 @@
 		7B8CEE6119F474BE00BCC156 /* WorkdayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkdayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8CEE6619F474BE00BCC156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8CEE6719F474BE00BCC156 /* WorkdayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkdayTests.swift; sourceTree = "<group>"; };
-		7B8CEE7119F47C1A00BCC156 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7B8CEE7119F47C1A00BCC156 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		BA8536E019F4AF290026DC17 /* TomorrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomorrowViewController.swift; sourceTree = "<group>"; };
 		BA8536E219F4AF730026DC17 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */,
 				BA8536E219F4AF730026DC17 /* MainViewController.swift */,
 				BA8536E019F4AF290026DC17 /* TomorrowViewController.swift */,
-				7B8CEE7119F47C1A00BCC156 /* HomeViewController.swift */,
+				7B8CEE7119F47C1A00BCC156 /* TodayViewController.swift */,
 				7B8CEE5819F474BE00BCC156 /* Images.xcassets */,
 				7B8CEE5A19F474BE00BCC156 /* LaunchScreen.xib */,
 				7B8CEE4F19F474BE00BCC156 /* Supporting Files */,
@@ -300,7 +300,7 @@
 				BA8536E719F4AFC90026DC17 /* AllTasksViewController.swift in Sources */,
 				7B8CEE5219F474BE00BCC156 /* AppDelegate.swift in Sources */,
 				40A678DD19FCE58400A5FF81 /* PivotalTaskViewController.swift in Sources */,
-				7B8CEE7219F47C1A00BCC156 /* HomeViewController.swift in Sources */,
+				7B8CEE7219F47C1A00BCC156 /* TodayViewController.swift in Sources */,
 				BA8536E119F4AF290026DC17 /* TomorrowViewController.swift in Sources */,
 				BA8536E319F4AF730026DC17 /* MainViewController.swift in Sources */,
 				40A678DB19FCE55E00A5FF81 /* TrelloTaskViewController.swift in Sources */,

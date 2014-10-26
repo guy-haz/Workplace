@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  TodayViewController.swift
 //  Workday
 //
 //  Created by siddiqui on 10/19/14.
@@ -50,6 +50,10 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     @IBOutlet weak var clock: UIImageView!
     
     
+    // View from the storyboard
+//    var todayViewController: UIViewController!
+//    var trelloArchiveViewController: UIViewController!
+//    var trelloLaterViewController: UIViewController!
     
 
 
@@ -60,6 +64,17 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         
         //make sure that the scrollview starts at 1PM (current time is 12.18 PM)
         calendarScrollView.contentOffset.y = 550
+        
+        // Adding the Storyboard and views
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        todayViewController = storyboard.instantiateViewControllerWithIdentifier("TodayViewController") as UIViewController
+//        trelloArchiveViewController = storyboard.instantiateViewControllerWithIdentifier("TrelloArchiveViewController") as UIViewController
+//        trelloLaterViewController = storyboard.instantiateViewControllerWithIdentifier("TrelloLaterViewController") as UIViewController
+
+        
+
+        checkmark.alpha = 0
+        clock.alpha = 0
         
         var taskTrelloBillingHeight = taskTrelloBilling.image!.size.height
         var taskTrelloNewHeight = taskTrelloNew.image!.size.height
@@ -131,15 +146,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             task1Copy.layer.masksToBounds = true
             task1Copy.clipsToBounds = false
             
-            //we need to make sure the duplicate is placed in the right place at beginning, before it was only placed in the correct location on change
-            //            task1Copy.center.x = originalPressDownLocation.x
-            //            task1Copy.center.y = originalPressDownLocation.y
-            //            task1Copy.frame.origin.x = location.x - originalImageCenter.x
-            //            task1Copy.frame.origin.y = location.y - originalImageCenter.y
-            //            task1Copy.center.x = originalImageCenter.x
-            //            task1Copy.center.y = originalImageCenter.y
-            
-            
+
         } else if sender.state == UIGestureRecognizerState.Changed {
             
             println("Changed long press at \(taskLocation)")
