@@ -256,7 +256,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="60.5" y="781.5"/>
+            <point key="canvasLocation" x="1035.5" y="781.5"/>
         </scene>
         <!--Task Detail View Controller-->
         <scene sceneID="7o6-QW-rBy">
@@ -439,7 +439,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="61.5" y="43.5"/>
+            <point key="canvasLocation" x="527.5" y="781.5"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="4Os-jx-CDt">
@@ -552,7 +552,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qa-86-wbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="537.5" y="781.5"/>
+            <point key="canvasLocation" x="1485.5" y="781.5"/>
         </scene>
         <!--Trello Later View Controller-->
         <scene sceneID="Qbo-fV-wjI">
