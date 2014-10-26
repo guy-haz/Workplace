@@ -146,6 +146,21 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="209"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" id="TMm-JU-fIo">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" id="9dc-yR-gci">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" id="Qfn-m6-Na8">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="trello - billing info" id="wKj-qy-Tdl">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -193,7 +208,7 @@
                                         <gestureRecognizers/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.84637248516082764" green="0.86642879247665405" blue="0.88718420267105103" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                             </scrollView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tasks-header" id="hLJ-Dg-L8A">
@@ -213,6 +228,8 @@
                         <outlet property="calendarHeader" destination="NQy-bh-GOx" id="d1s-tb-Bso"/>
                         <outlet property="calendarImage" destination="VOM-AE-MEG" id="RbU-uz-cXJ"/>
                         <outlet property="calendarScrollView" destination="vqF-m4-9w2" id="Uss-ds-kEl"/>
+                        <outlet property="checkmark" destination="9dc-yR-gci" id="89O-Pv-O6W"/>
+                        <outlet property="clock" destination="Qfn-m6-Na8" id="sfE-7P-j99"/>
                         <outlet property="task1" destination="wKj-qy-Tdl" id="3Bp-Xh-eTE"/>
                         <outlet property="task1Gesture" destination="cNI-sj-oIh" id="wGx-vN-X2M"/>
                         <outlet property="task2" destination="06e-Pm-wCy" id="gAb-7s-5Yd"/>
@@ -258,10 +275,10 @@
             </objects>
             <point key="canvasLocation" x="1035.5" y="781.5"/>
         </scene>
-        <!--Task Detail View Controller-->
+        <!--Trello Task View Controller-->
         <scene sceneID="7o6-QW-rBy">
             <objects>
-                <viewController id="qNC-VN-wQ9" customClass="TaskDetailViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qNC-VN-wQ9" customClass="TrelloTaskViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XMZ-Gi-wud">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -594,6 +611,8 @@
     <resources>
         <image name="calendar" width="375" height="1471"/>
         <image name="calendar-header" width="375" height="40"/>
+        <image name="checkmark" width="20" height="16"/>
+        <image name="clock" width="20" height="20"/>
         <image name="close-button" width="41" height="41"/>
         <image name="meeting" width="210" height="184"/>
         <image name="meeting-2" width="275" height="47"/>

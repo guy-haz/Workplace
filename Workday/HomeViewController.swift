@@ -41,14 +41,15 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     @IBOutlet var task3Gesture: UIPanGestureRecognizer!
     
     var taskLocation : CGPoint!
-    
     var taskScrollViewIsScrolling = false
-    
     var tasktoSegue : UIImageView!
-    
     var taskCenter: CGPoint!
-    
     var imageView: UIImageView!
+    
+    @IBOutlet weak var checkmark: UIImageView!
+    @IBOutlet weak var clock: UIImageView!
+    
+    
     
 
 
@@ -59,9 +60,6 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         
         //make sure that the scrollview starts at 1PM (current time is 12.18 PM)
         calendarScrollView.contentOffset.y = 550
-        
-       
-        
         
         var taskTrelloBillingHeight = taskTrelloBilling.image!.size.height
         var taskTrelloNewHeight = taskTrelloNew.image!.size.height
@@ -87,28 +85,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         
         // Do any additional setup after loading the view.
     }
-    
-//    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-//        println("scrolling")
-//        
-//        UIView.animateWithDuration(0.3, animations: { () -> Void in
-//            
-//            self.calendarScrollView.frame.offset(dx: 0, dy: 70)
-//            self.calendarHeader.frame.offset(dx: 0, dy: 70)
-//            self.taskScrollView.frame.size.height = 278
-//        })
-//    }
-    
-    
-//    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        UIView.animateWithDuration(0.3, animations: { () -> Void in
-//            
-//            self.calendarScrollView.frame.offset(dx: 0, dy: -70)
-//            self.calendarHeader.frame.offset(dx: 0, dy: -70)
-//            self.taskScrollView.frame.size.height = 208
-//            
-//        })
-//    }
+
     
     /*---------Turning on simultaneous gestures--------------------------*/
     
@@ -233,6 +210,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         var translation = sender.translationInView(view)
         var velocity = sender.velocityInView(view)
         
+        
+        
         if translation.x > 0 || translation.x < 0 {
             
         }
@@ -244,16 +223,38 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 taskCenter = tasktoSegue.center
                 
             } else if sender.state == UIGestureRecognizerState.Changed {
+                checkmark.alpha = 0
+                clock.alpha = 0
                 
                 tasktoSegue.center.x = translation.x + taskCenter.x
                 var position = tasktoSegue.frame.origin.x
-                println("The position is \(position)")
                 taskScrollView.scrollEnabled = false
                 
                 
+                if translation.x < 0 {
+                    clock.alpha = 1
+                    clock.center.x = translation.x + 410
+                    clock.center.y = 32
+                } else if translation.x > 0 {
+                    checkmark.alpha = 1
+                    checkmark.center.x = translation.x - 30
+                    checkmark.center.y = 32
+                }
+                
+                
             } else if sender.state == UIGestureRecognizerState.Ended {
+                // Swipe left to do later
+                if translation.x < -60 {
+                    println("do it later")
+                }
+                
+                // Swipe right to archive
+                if translation.x > 60 {
+                    println("archive it")
+                }
+                
+                
                 UIView.animateWithDuration(0.3, animations: { () -> Void in
-                    
                     self.tasktoSegue.frame.origin.x = 0
                 })
                 
