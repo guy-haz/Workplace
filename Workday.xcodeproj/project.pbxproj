@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40A678D719FCE1F400A5FF81 /* PivotalLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A678D619FCE1F400A5FF81 /* PivotalLaterViewController.swift */; };
+		40A678D919FCE39E00A5FF81 /* TrelloLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A678D819FCE39E00A5FF81 /* TrelloLaterViewController.swift */; };
+		40A678DB19FCE55E00A5FF81 /* TrelloTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A678DA19FCE55E00A5FF81 /* TrelloTaskViewController.swift */; };
+		40A678DD19FCE58400A5FF81 /* PivotalTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A678DC19FCE58400A5FF81 /* PivotalTaskViewController.swift */; };
+		40A678DF19FCE9FC00A5FF81 /* PivotalArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A678DE19FCE9FC00A5FF81 /* PivotalArchiveViewController.swift */; };
+		40A678E119FCEA2900A5FF81 /* TrelloArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A678E019FCEA2900A5FF81 /* TrelloArchiveViewController.swift */; };
 		40EC5D9319F8754500D7D5D3 /* ProximaNova-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40EC5D8919F8754500D7D5D3 /* ProximaNova-Black.otf */; };
 		40EC5D9419F8754500D7D5D3 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40EC5D8A19F8754500D7D5D3 /* ProximaNova-Bold.otf */; };
 		40EC5D9519F8754500D7D5D3 /* ProximaNova-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40EC5D8B19F8754500D7D5D3 /* ProximaNova-BoldIt.otf */; };
@@ -28,7 +34,6 @@
 		BA8536E319F4AF730026DC17 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E219F4AF730026DC17 /* MainViewController.swift */; };
 		BA8536E519F4AFA20026DC17 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */; };
 		BA8536E719F4AFC90026DC17 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E619F4AFC90026DC17 /* AllTasksViewController.swift */; };
-		BA8536E919F4C0890026DC17 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E819F4C0890026DC17 /* TaskDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40A678D619FCE1F400A5FF81 /* PivotalLaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PivotalLaterViewController.swift; sourceTree = "<group>"; };
+		40A678D819FCE39E00A5FF81 /* TrelloLaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrelloLaterViewController.swift; sourceTree = "<group>"; };
+		40A678DA19FCE55E00A5FF81 /* TrelloTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrelloTaskViewController.swift; sourceTree = "<group>"; };
+		40A678DC19FCE58400A5FF81 /* PivotalTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PivotalTaskViewController.swift; sourceTree = "<group>"; };
+		40A678DE19FCE9FC00A5FF81 /* PivotalArchiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PivotalArchiveViewController.swift; sourceTree = "<group>"; };
+		40A678E019FCEA2900A5FF81 /* TrelloArchiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrelloArchiveViewController.swift; sourceTree = "<group>"; };
 		40EC5D8919F8754500D7D5D3 /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.otf"; sourceTree = "<group>"; };
 		40EC5D8A19F8754500D7D5D3 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		40EC5D8B19F8754500D7D5D3 /* ProximaNova-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-BoldIt.otf"; sourceTree = "<group>"; };
@@ -67,7 +78,6 @@
 		BA8536E219F4AF730026DC17 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BA8536E619F4AFC90026DC17 /* AllTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
-		BA8536E819F4C0890026DC17 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +141,12 @@
 				7B8CEE5119F474BE00BCC156 /* AppDelegate.swift */,
 				7B8CEE5319F474BE00BCC156 /* ViewController.swift */,
 				7B8CEE5519F474BE00BCC156 /* Main.storyboard */,
-				BA8536E819F4C0890026DC17 /* TaskDetailViewController.swift */,
+				40A678E019FCEA2900A5FF81 /* TrelloArchiveViewController.swift */,
+				40A678DE19FCE9FC00A5FF81 /* PivotalArchiveViewController.swift */,
+				40A678DC19FCE58400A5FF81 /* PivotalTaskViewController.swift */,
+				40A678DA19FCE55E00A5FF81 /* TrelloTaskViewController.swift */,
+				40A678D819FCE39E00A5FF81 /* TrelloLaterViewController.swift */,
+				40A678D619FCE1F400A5FF81 /* PivotalLaterViewController.swift */,
 				BA8536E619F4AFC90026DC17 /* AllTasksViewController.swift */,
 				BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */,
 				BA8536E219F4AF730026DC17 /* MainViewController.swift */,
@@ -280,12 +295,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8CEE5419F474BE00BCC156 /* ViewController.swift in Sources */,
+				40A678DF19FCE9FC00A5FF81 /* PivotalArchiveViewController.swift in Sources */,
+				40A678E119FCEA2900A5FF81 /* TrelloArchiveViewController.swift in Sources */,
 				BA8536E719F4AFC90026DC17 /* AllTasksViewController.swift in Sources */,
 				7B8CEE5219F474BE00BCC156 /* AppDelegate.swift in Sources */,
+				40A678DD19FCE58400A5FF81 /* PivotalTaskViewController.swift in Sources */,
 				7B8CEE7219F47C1A00BCC156 /* HomeViewController.swift in Sources */,
 				BA8536E119F4AF290026DC17 /* TomorrowViewController.swift in Sources */,
 				BA8536E319F4AF730026DC17 /* MainViewController.swift in Sources */,
-				BA8536E919F4C0890026DC17 /* TaskDetailViewController.swift in Sources */,
+				40A678DB19FCE55E00A5FF81 /* TrelloTaskViewController.swift in Sources */,
+				40A678D919FCE39E00A5FF81 /* TrelloLaterViewController.swift in Sources */,
+				40A678D719FCE1F400A5FF81 /* PivotalLaterViewController.swift in Sources */,
 				BA8536E519F4AFA20026DC17 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

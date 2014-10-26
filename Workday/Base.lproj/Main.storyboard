@@ -10,6 +10,108 @@
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--Pivotal Later View Controller-->
+        <scene sceneID="QVg-GK-nZ5">
+            <objects>
+                <viewController id="ZNR-B3-HvA" customClass="PivotalLaterViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rJk-O0-trs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-later" id="fno-vX-YbX">
+                                <rect key="frame" x="22" y="137" width="330" height="289"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bCs-IK-kFF">
+                                <rect key="frame" x="167" y="561" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton:" destination="ZNR-B3-HvA" eventType="touchUpInside" id="etb-Un-a5U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pivotalModal" destination="fno-vX-YbX" id="xSc-Dj-OyL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSx-rW-Xgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338.5" y="781.5"/>
+        </scene>
+        <!--Pivotal Archive View Controller-->
+        <scene sceneID="W29-mv-RAI">
+            <objects>
+                <viewController id="i8p-Wz-KlX" customClass="PivotalArchiveViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Co-Ku-jOe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-archive" id="IPd-BL-QbF">
+                                <rect key="frame" x="22" y="137" width="330" height="228"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Pcz-g0-V9C">
+                                <rect key="frame" x="167" y="561" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton:" destination="i8p-Wz-KlX" eventType="touchUpInside" id="GXZ-1g-tYt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pivotalModal" destination="IPd-BL-QbF" id="Rbj-ho-tDP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sjt-nD-BEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338.5" y="43.5"/>
+        </scene>
+        <!--Pivotal Archive View Controller-->
+        <scene sceneID="GJv-a4-mTf">
+            <objects>
+                <viewController id="V9B-ho-d66" customClass="PivotalArchiveViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zhv-uV-M0r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-archive" id="psP-BY-050">
+                                <rect key="frame" x="22" y="137" width="330" height="257"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IA5-Uf-b2x">
+                                <rect key="frame" x="167" y="561" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton:" destination="V9B-ho-d66" eventType="touchUpInside" id="hpE-cK-UDf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pivotalModal" destination="psP-BY-050" id="tBS-gN-lcm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mbs-Qi-6pF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-789.5" y="43.5"/>
+        </scene>
         <!--Today View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -51,6 +153,7 @@
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="cNI-sj-oIh" appends="YES" id="Ypz-G9-wnX"/>
                                             <outletCollection property="gestureRecognizers" destination="8uX-JP-QR0" appends="YES" id="Xpz-wQ-vwi"/>
+                                            <outletCollection property="gestureRecognizers" destination="6K1-pH-qCp" appends="YES" id="RFn-Rc-BT0"/>
                                         </connections>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - error and warning states" id="06e-Pm-wCy">
@@ -91,6 +194,7 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84637248516082764" green="0.86642879247665405" blue="0.88718420267105103" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                             </scrollView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tasks-header" id="hLJ-Dg-L8A">
                                 <rect key="frame" x="0.0" y="64" width="375" height="40"/>
@@ -146,13 +250,18 @@
                         <action selector="onLongPress1:" destination="vXZ-lx-hvc" id="7zU-vj-f7X"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="6K1-pH-qCp">
+                    <connections>
+                        <action selector="onTap:" destination="vXZ-lx-hvc" id="zjc-ZC-rsq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="60.5" y="781.5"/>
         </scene>
-        <!--Task Detail View Controller-->
+        <!--Trello Task View Controller-->
         <scene sceneID="dvU-IX-2we">
             <objects>
-                <viewController id="vDb-ZU-9LM" customClass="TaskDetailViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vDb-ZU-9LM" customClass="TrelloTaskViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Gl-Nl-SIj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,6 +290,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-action" id="Jd9-Cp-SNF">
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -192,7 +305,154 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yeV-SN-5D2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527.5" y="783.5"/>
+            <point key="canvasLocation" x="527.5" y="781.5"/>
+        </scene>
+        <!--Task Detail View Controller-->
+        <scene sceneID="7o6-QW-rBy">
+            <objects>
+                <viewController id="qNC-VN-wQ9" customClass="TaskDetailViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XMZ-Gi-wud">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sdp-JH-S5t">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressBack:" destination="qNC-VN-wQ9" eventType="touchUpInside" id="EsD-rF-pFd"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6S3-dA-60V">
+                                <rect key="frame" x="0.0" y="64" width="375" height="604"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-card-task" id="jrF-xt-Alg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-card-nav" id="c0I-ks-E3s">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-action" id="Gjs-mh-CrY">
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="scrollView" destination="6S3-dA-60V" id="Ado-qI-UKT"/>
+                        <outlet property="taskImage" destination="jrF-xt-Alg" id="Abi-pD-TaD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQ2-Hf-IPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527.5" y="781.5"/>
+        </scene>
+        <!--Trello Task View Controller-->
+        <scene sceneID="zOn-4x-mOx">
+            <objects>
+                <viewController id="ZT0-NQ-Ykf" customClass="TrelloTaskViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mId-r7-Irw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DEC-Hq-bh6">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressBack:" destination="ZT0-NQ-Ykf" eventType="touchUpInside" id="SyQ-zM-uz6"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="c8N-KN-1ab">
+                                <rect key="frame" x="0.0" y="64" width="375" height="604"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-card-task" id="9eG-A9-wpN">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-action" id="JKz-BL-YJk">
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-card-nav" id="S1J-Mg-bL8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="scrollView" destination="c8N-KN-1ab" id="Va3-0O-vgG"/>
+                        <outlet property="taskImage" destination="9eG-A9-wpN" id="3Au-af-FcS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Loi-e8-KK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527.5" y="781.5"/>
+        </scene>
+        <!--Pivotal Task View Controller-->
+        <scene sceneID="vhU-AU-Aix">
+            <objects>
+                <viewController id="Gtq-Aj-6mn" customClass="PivotalTaskViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O9S-uu-vth">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Lj-yt-BfM">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressBack:" destination="Gtq-Aj-6mn" eventType="touchUpInside" id="dqf-yX-GCh"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="qNj-oM-buQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="604"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-card-task" id="9dg-jD-ROI">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-nav-bar" id="8xp-30-HlS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-action" id="5SA-ng-You">
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="scrollView" destination="qNj-oM-buQ" id="Srz-OI-MKK"/>
+                        <outlet property="taskImage" destination="9dg-jD-ROI" id="rZ9-oz-mW2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JhF-lr-wZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035.5" y="781.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="LmO-v7-pW0">
@@ -390,12 +650,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qa-86-wbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035.5" y="783.5"/>
+            <point key="canvasLocation" x="1453.5" y="768.5"/>
+        </scene>
+        <!--Trello Later View Controller-->
+        <scene sceneID="Qbo-fV-wjI">
+            <objects>
+                <viewController id="2wk-rg-xB4" customClass="TrelloLaterViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HF2-bk-UEA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X7K-RN-5TD">
+                                <rect key="frame" x="167" y="561" width="41" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton:" destination="2wk-rg-xB4" eventType="touchUpInside" id="thb-j9-Sxa"/>
+                                    <action selector="closebutton:" destination="2wk-rg-xB4" eventType="touchUpInside" id="Wsy-Dx-dJu"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-later" id="y0L-d7-XGb">
+                                <rect key="frame" x="22" y="127" width="330" height="313"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pivotalModal" destination="y0L-d7-XGb" id="nHl-92-qRR"/>
+                        <outlet property="trelloModal" destination="y0L-d7-XGb" id="hHh-y1-J1l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKP-UJ-f9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-789.5" y="781.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="calendar" width="375" height="1471"/>
         <image name="calendar-header" width="375" height="40"/>
+        <image name="close-button" width="41" height="41"/>
         <image name="meeting" width="210" height="184"/>
         <image name="meeting-2" width="275" height="47"/>
         <image name="meeting-4" width="210" height="116"/>
@@ -403,6 +700,11 @@
         <image name="pivotal - error and warning states" width="375" height="70"/>
         <image name="pivotal - home page specs" width="375" height="89"/>
         <image name="pivotal - q4 roadmap" width="375" height="118"/>
+        <image name="pivotal-action" width="375" height="75"/>
+        <image name="pivotal-archive" width="330" height="228"/>
+        <image name="pivotal-card-task" width="375" height="602"/>
+        <image name="pivotal-later" width="330" height="289"/>
+        <image name="pivotal-nav-bar" width="375" height="64"/>
         <image name="settings" width="375" height="689"/>
         <image name="settings-nav" width="375" height="64"/>
         <image name="tasks-header" width="375" height="40"/>
@@ -410,8 +712,11 @@
         <image name="trello - dashboard" width="375" height="118"/>
         <image name="trello - new user" width="375" height="118"/>
         <image name="trello - styleguide android" width="375" height="118"/>
+        <image name="trello-action" width="375" height="75"/>
+        <image name="trello-archive" width="330" height="257"/>
         <image name="trello-card-nav" width="375" height="64"/>
-        <image name="trello-card-task" width="375" height="871"/>
+        <image name="trello-card-task" width="375" height="902"/>
+        <image name="trello-later" width="330" height="313"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

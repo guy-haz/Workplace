@@ -116,6 +116,9 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         return true
     }
     
+    @IBAction func onTap(sender: UITapGestureRecognizer) {
+        println("tapped")
+    }
     @IBAction func onLongPress1(sender: UILongPressGestureRecognizer) {
         
         taskLocation = sender.locationInView(view)
