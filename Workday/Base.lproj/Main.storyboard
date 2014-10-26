@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vL7-R6-ORZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vL7-R6-ORZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="ProximaNova-Regular.otf">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-later" id="fno-vX-YbX">
-                                <rect key="frame" x="22" y="137" width="330" height="289"/>
+                                <rect key="frame" x="22" y="137" width="333" height="368"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bCs-IK-kFF">
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-archive" id="IPd-BL-QbF">
-                                <rect key="frame" x="22" y="160" width="330" height="228"/>
+                                <rect key="frame" x="22" y="160" width="330" height="282"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -298,7 +298,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-card-task" id="jrF-xt-Alg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1150"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
@@ -347,7 +347,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-card-task" id="9dg-jD-ROI">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1068"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
@@ -591,7 +591,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-later" id="y0L-d7-XGb">
-                                <rect key="frame" x="22" y="127" width="330" height="313"/>
+                                <rect key="frame" x="22" y="127" width="333" height="342"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -622,9 +622,9 @@
         <image name="pivotal - home page specs" width="375" height="89"/>
         <image name="pivotal - q4 roadmap" width="375" height="118"/>
         <image name="pivotal-action" width="375" height="75"/>
-        <image name="pivotal-archive" width="330" height="228"/>
-        <image name="pivotal-card-task" width="375" height="602"/>
-        <image name="pivotal-later" width="330" height="289"/>
+        <image name="pivotal-archive" width="330" height="282"/>
+        <image name="pivotal-card-task" width="375" height="1068"/>
+        <image name="pivotal-later" width="333" height="368"/>
         <image name="pivotal-nav-bar" width="375" height="64"/>
         <image name="settings" width="375" height="689"/>
         <image name="settings-nav" width="375" height="64"/>
@@ -636,8 +636,8 @@
         <image name="trello-action" width="375" height="75"/>
         <image name="trello-archive" width="330" height="257"/>
         <image name="trello-card-nav" width="375" height="64"/>
-        <image name="trello-card-task" width="375" height="902"/>
-        <image name="trello-later" width="330" height="313"/>
+        <image name="trello-card-task" width="375" height="1150"/>
+        <image name="trello-later" width="333" height="342"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
