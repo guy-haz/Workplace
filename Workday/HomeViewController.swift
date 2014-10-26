@@ -20,6 +20,16 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     @IBOutlet weak var task2: UIImageView!
     @IBOutlet weak var task3: UIImageView!
     
+    // Task list
+    @IBOutlet weak var taskTrelloBilling: UIImageView!
+    @IBOutlet weak var taskPivotalError: UIImageView!
+    @IBOutlet weak var taskTrelloNew: UIImageView!
+    @IBOutlet weak var taskTrelloStyleguide: UIImageView!
+    @IBOutlet weak var taskPivotalHomePage: UIImageView!
+    @IBOutlet weak var taskPivotalRoadmap: UIImageView!
+    @IBOutlet weak var taskTrelloDashboard: UIImageView!
+    
+    
     var task1Copy: UIImageView!
     var panGesture: UIPanGestureRecognizer!
     var originalPressDownLocation : CGPoint!
@@ -53,15 +63,16 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
        
         
         
-        var task1Height = task1.image!.size.height
-        var task2Height = task2.image!.size.height
-        var task3Height = task3.image!.size.height
+        var taskTrelloBillingHeight = taskTrelloBilling.image!.size.height
+        var taskTrelloNewHeight = taskTrelloNew.image!.size.height
+        var taskTrelloStyleguideHeight = taskTrelloStyleguide.image!.size.height
+        var taskTrelloDashboardHeight = taskTrelloDashboard.image!.size.height
+        var taskPivotalErrorHeight = taskPivotalError.image!.size.height
+        var taskPivotalHomePageHeight = taskPivotalHomePage.image!.size.height
+        var taskPivotalRoadmapHeight = taskPivotalRoadmap.image!.size.height
         
-        var scrollHeight = task1Height + task2Height + task3Height
-        
-        println("One is \(task1Height)")
-        println("Two is \(task2Height)")
-        println("Three is \(task3Height)")
+        var scrollHeight = taskTrelloBillingHeight + taskTrelloNewHeight + taskTrelloStyleguideHeight + taskTrelloDashboardHeight + taskPivotalErrorHeight + taskPivotalHomePageHeight + taskPivotalRoadmapHeight
+
 
         println("total is \(scrollHeight)")
         

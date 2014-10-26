@@ -41,11 +41,11 @@
                                 </subviews>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iBd-Rt-5jv" userLabel="Task Scroll View">
-                                <rect key="frame" x="0.0" y="104" width="375" height="212"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="209"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - billing info" id="wKj-qy-Tdl">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="trello - billing info" id="wKj-qy-Tdl">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -54,7 +54,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - error and warning states" id="06e-Pm-wCy">
-                                        <rect key="frame" x="0.0" y="75" width="375" height="75"/>
+                                        <rect key="frame" x="0.0" y="70" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -62,7 +62,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - new user" id="LpA-5F-y3F">
-                                        <rect key="frame" x="0.0" y="150" width="375" height="145"/>
+                                        <rect key="frame" x="0.0" y="140" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -70,22 +70,22 @@
                                         </connections>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - styleguide android" id="HDX-R7-MKz">
-                                        <rect key="frame" x="0.0" y="295" width="375" height="126"/>
+                                        <rect key="frame" x="0.0" y="258" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - home page specs" id="uK0-jF-qki">
-                                        <rect key="frame" x="0.0" y="420" width="375" height="96"/>
+                                        <rect key="frame" x="0.0" y="376" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - q4 roadmap" id="aWL-KF-PXF">
-                                        <rect key="frame" x="0.0" y="515" width="375" height="118"/>
+                                        <rect key="frame" x="0.0" y="465" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - dashboard" id="XqC-uY-gmo">
-                                        <rect key="frame" x="0.0" y="633" width="375" height="122"/>
+                                        <rect key="frame" x="0.0" y="583" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                     </imageView>
@@ -115,7 +115,14 @@
                         <outlet property="task2Gesture" destination="1NG-NW-iaQ" id="OO0-pb-Zce"/>
                         <outlet property="task3" destination="LpA-5F-y3F" id="Hkq-du-c9Z"/>
                         <outlet property="task3Gesture" destination="0fJ-xc-LjJ" id="1uR-cJ-yTQ"/>
+                        <outlet property="taskPivotalError" destination="06e-Pm-wCy" id="bFo-xY-pPk"/>
+                        <outlet property="taskPivotalHomePage" destination="uK0-jF-qki" id="m2D-6W-bDu"/>
+                        <outlet property="taskPivotalRoadmap" destination="aWL-KF-PXF" id="LWf-OQ-eki"/>
                         <outlet property="taskScrollView" destination="iBd-Rt-5jv" id="9R7-wj-ED8"/>
+                        <outlet property="taskTrelloBilling" destination="wKj-qy-Tdl" id="2cN-v4-do3"/>
+                        <outlet property="taskTrelloDashboard" destination="XqC-uY-gmo" id="k92-AQ-KIf"/>
+                        <outlet property="taskTrelloNew" destination="LpA-5F-y3F" id="taR-kW-Rvx"/>
+                        <outlet property="taskTrelloStyleguide" destination="HDX-R7-MKz" id="jOS-x9-Fzt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -140,7 +147,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="60.5" y="782.5"/>
+            <point key="canvasLocation" x="60.5" y="781.5"/>
         </scene>
         <!--Task Detail View Controller-->
         <scene sceneID="dvU-IX-2we">
