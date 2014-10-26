@@ -393,16 +393,16 @@
         <image name="meeting-2" width="275" height="47"/>
         <image name="meeting-4" width="210" height="116"/>
         <image name="nav-bar" width="375" height="64"/>
-        <image name="pivotal - error and warning states" width="375" height="75"/>
-        <image name="pivotal - home page specs" width="375" height="95"/>
+        <image name="pivotal - error and warning states" width="375" height="70"/>
+        <image name="pivotal - home page specs" width="375" height="89"/>
         <image name="pivotal - q4 roadmap" width="375" height="118"/>
         <image name="settings" width="375" height="689"/>
         <image name="settings-nav" width="375" height="64"/>
         <image name="tasks-header" width="375" height="40"/>
-        <image name="trello - billing info" width="375" height="75"/>
-        <image name="trello - dashboard" width="375" height="122"/>
-        <image name="trello - new user" width="375" height="145"/>
-        <image name="trello - styleguide android" width="375" height="126"/>
+        <image name="trello - billing info" width="375" height="70"/>
+        <image name="trello - dashboard" width="375" height="118"/>
+        <image name="trello - new user" width="375" height="118"/>
+        <image name="trello - styleguide android" width="375" height="118"/>
         <image name="trello-card-nav" width="375" height="64"/>
         <image name="trello-card-task" width="375" height="871"/>
     </resources>
