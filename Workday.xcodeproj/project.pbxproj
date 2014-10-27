@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		403CA7EA19FDCDE200E99BF5 /* Dosis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 403CA7E919FDCDE200E99BF5 /* Dosis-SemiBold.otf */; };
 		40A678D719FCE1F400A5FF81 /* PivotalLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A678D619FCE1F400A5FF81 /* PivotalLaterViewController.swift */; };
 		40A678D919FCE39E00A5FF81 /* TrelloLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A678D819FCE39E00A5FF81 /* TrelloLaterViewController.swift */; };
 		40A678DB19FCE55E00A5FF81 /* TrelloTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A678DA19FCE55E00A5FF81 /* TrelloTaskViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		403CA7E919FDCDE200E99BF5 /* Dosis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.otf"; sourceTree = "<group>"; };
 		40A678D619FCE1F400A5FF81 /* PivotalLaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PivotalLaterViewController.swift; sourceTree = "<group>"; };
 		40A678D819FCE39E00A5FF81 /* TrelloLaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrelloLaterViewController.swift; sourceTree = "<group>"; };
 		40A678DA19FCE55E00A5FF81 /* TrelloTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrelloTaskViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		40EC5D8819F8754500D7D5D3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				403CA7E919FDCDE200E99BF5 /* Dosis-SemiBold.otf */,
 				40EC5D8919F8754500D7D5D3 /* ProximaNova-Black.otf */,
 				40EC5D8A19F8754500D7D5D3 /* ProximaNova-Bold.otf */,
 				40EC5D8B19F8754500D7D5D3 /* ProximaNova-BoldIt.otf */,
@@ -271,6 +274,7 @@
 				40EC5D9519F8754500D7D5D3 /* ProximaNova-BoldIt.otf in Resources */,
 				40EC5D9619F8754500D7D5D3 /* ProximaNova-Extrabld.otf in Resources */,
 				40EC5D9A19F8754500D7D5D3 /* ProximaNova-RegularIt.otf in Resources */,
+				403CA7EA19FDCDE200E99BF5 /* Dosis-SemiBold.otf in Resources */,
 				40EC5D9319F8754500D7D5D3 /* ProximaNova-Black.otf in Resources */,
 				40EC5D9B19F8754500D7D5D3 /* ProximaNova-Semibold.otf in Resources */,
 				40EC5D9719F8754500D7D5D3 /* ProximaNova-Light.otf in Resources */,
