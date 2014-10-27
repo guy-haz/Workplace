@@ -34,8 +34,13 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     
     
     
-    @IBOutlet var task1Gesture: UIPanGestureRecognizer!
-    @IBOutlet var task2Gesture: UIPanGestureRecognizer!
+    @IBOutlet var billingInfoPanGesture: UIPanGestureRecognizer!
+    @IBOutlet var errorPanGesture: UIPanGestureRecognizer!
+    @IBOutlet var homepagePanGesture: UIPanGestureRecognizer!
+    @IBOutlet var q4PanGesture: UIPanGestureRecognizer!
+    @IBOutlet var dashboardPanGesture: UIPanGestureRecognizer!
+    
+    
     
     var taskLocation : CGPoint!
     var taskScrollViewIsScrolling = false
@@ -84,8 +89,11 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 
         println("total is \(scrollHeight)")
         
-        task1Gesture.delegate = self
-        task2Gesture.delegate = self
+        billingInfoPanGesture.delegate = self
+        errorPanGesture.delegate = self
+        homepagePanGesture.delegate = self
+        q4PanGesture.delegate = self
+        dashboardPanGesture.delegate = self
         
         taskScrollView.contentSize = CGSize(width: 375, height: scrollHeight)
         
@@ -105,11 +113,16 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     
 
     
-    @IBAction func onTap(sender: UITapGestureRecognizer) {
-        println("tapped")
-        
-        
+    @IBAction func onQ4Tap(sender: UITapGestureRecognizer) {
+        performSegueWithIdentifier("q4Segue", sender: self)
+
     }
+
+    @IBAction func onDashboardTap(sender: UITapGestureRecognizer) {
+        performSegueWithIdentifier("dashboardSegue", sender: self)
+    }
+    
+    
     @IBAction func onLongPress1(sender: UILongPressGestureRecognizer) {
         
         taskOriginal = sender.view as UIImageView!
@@ -119,7 +132,11 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         
         if sender.state == UIGestureRecognizerState.Began {
             
-            task1Gesture.enabled = false
+            billingInfoPanGesture.enabled = false
+            errorPanGesture.enabled = false
+            homepagePanGesture.enabled = false
+            q4PanGesture.enabled = false
+            dashboardPanGesture.enabled = false
             
             taskOriginal.alpha = 0.5
             
@@ -181,7 +198,12 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 self.task1Copy.alpha = 0
             })
             
-            task1Gesture.enabled = true
+            billingInfoPanGesture.enabled = true
+            errorPanGesture.enabled = true
+            homepagePanGesture.enabled = true
+            q4PanGesture.enabled = true
+            dashboardPanGesture.enabled = true
+            
             taskOriginal.alpha = 1.0
             
         }
@@ -249,12 +271,26 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             } else if sender.state == UIGestureRecognizerState.Ended {
                 // Swipe left to do later
                 if translation.x < -60 {
-                    println("do it later")
+
+                    if tasktoSegue.image == UIImage(named: "trello - dashboard") {
+                        performSegueWithIdentifier("dashboardModalSegue", sender: self)
+                    } else if tasktoSegue.image == UIImage(named: "pivotal - q4 roadmap") {
+                        performSegueWithIdentifier("q4ModalSegue", sender: self)
+                    }
+                    
+
                 }
                 
                 // Swipe right to archive
                 if translation.x > 60 {
-                    println("archive it")
+
+                    if tasktoSegue.image == UIImage(named: "trello - billing info") {
+                        performSegueWithIdentifier("billingModalSegue", sender: self)
+                        println("trello billing")
+                    } else if tasktoSegue.image == UIImage(named: "pivotal - home page specs") {
+                        println("pivotal")
+                        performSegueWithIdentifier("homepageModalSegue", sender: self)
+                    }
                 }
                 
                 

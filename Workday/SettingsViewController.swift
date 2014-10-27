@@ -18,6 +18,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var eventsSwitch: UISwitch!
     @IBOutlet weak var tasksSwitch: UISwitch!
+    @IBOutlet weak var calendarSwitch: UISwitch!
     
     @IBAction func onTap(sender: UITapGestureRecognizer) {
         view.endEditing(true)
@@ -35,6 +36,8 @@ class SettingsViewController: UIViewController {
         let tintColor = UIColor(red: 0.12, green: 0.40, blue: 0.51, alpha: 1)
         eventsSwitch.onTintColor = tintColor
         tasksSwitch.onTintColor = tintColor
+        calendarSwitch.onTintColor = tintColor
+
         
     }
 

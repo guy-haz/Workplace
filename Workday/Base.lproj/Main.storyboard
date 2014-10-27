@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-later" id="fno-vX-YbX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="q4Modal-later" id="fno-vX-YbX">
                                 <rect key="frame" x="22" y="137" width="330" height="297"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -37,12 +37,9 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="pivotalModal" destination="fno-vX-YbX" id="xSc-Dj-OyL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSx-rW-Xgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,20 +60,17 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="closeButton:" destination="i8p-Wz-KlX" eventType="touchUpInside" id="GXZ-1g-tYt"/>
+                                    <action selector="closeButton:" destination="i8p-Wz-KlX" eventType="touchUpInside" id="udt-FI-TVv"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-archive" id="IPd-BL-QbF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homepageModal-complete" id="IPd-BL-QbF">
                                 <rect key="frame" x="22" y="160" width="330" height="282"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="pivotalModal" destination="IPd-BL-QbF" id="Rbj-ho-tDP"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjt-nD-BEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-archive" id="psP-BY-050">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="billingModal-complete" id="psP-BY-050">
                                 <rect key="frame" x="22" y="137" width="330" height="257"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -101,16 +95,13 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="closeButton:" destination="V9B-ho-d66" eventType="touchUpInside" id="hpE-cK-UDf"/>
+                                    <action selector="closeButton:" destination="V9B-ho-d66" eventType="touchUpInside" id="Fv3-Mm-9Mm"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="pivotalModal" destination="psP-BY-050" id="tBS-gN-lcm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbs-Qi-6pF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,16 +156,6 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="trello - billing info" id="wKj-qy-Tdl">
-                                        <rect key="frame" x="0.0" y="236" width="375" height="70"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="cNI-sj-oIh" appends="YES" id="Ypz-G9-wnX"/>
-                                            <outletCollection property="gestureRecognizers" destination="8uX-JP-QR0" appends="YES" id="Xpz-wQ-vwi"/>
-                                            <outletCollection property="gestureRecognizers" destination="6K1-pH-qCp" appends="YES" id="RFn-Rc-BT0"/>
-                                        </connections>
-                                    </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - error and warning states" id="06e-Pm-wCy">
                                         <rect key="frame" x="0.0" y="306" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -200,6 +181,7 @@
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="KHe-7A-ML6" appends="YES" id="iSy-I0-pnO"/>
                                             <outletCollection property="gestureRecognizers" destination="lkF-jg-sxr" appends="YES" id="V5Y-3P-tA3"/>
+                                            <outletCollection property="gestureRecognizers" destination="XU9-av-TXC" appends="YES" id="gCu-bs-qyu"/>
                                         </connections>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - dashboard" id="XqC-uY-gmo">
@@ -209,6 +191,16 @@
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="tEQ-Jf-t0N" appends="YES" id="A3b-N0-0jn"/>
                                             <outletCollection property="gestureRecognizers" destination="SCc-0n-RGy" appends="YES" id="4cF-qe-yeB"/>
+                                            <outletCollection property="gestureRecognizers" destination="vMv-fJ-iGC" appends="YES" id="IeB-V3-TTj"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="trello - billing info" id="wKj-qy-Tdl">
+                                        <rect key="frame" x="0.0" y="236" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="cNI-sj-oIh" appends="YES" id="Ypz-G9-wnX"/>
+                                            <outletCollection property="gestureRecognizers" destination="8uX-JP-QR0" appends="YES" id="Xpz-wQ-vwi"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -229,19 +221,28 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="billingInfoPanGesture" destination="cNI-sj-oIh" id="pZm-91-c9D"/>
                         <outlet property="calendarHeader" destination="NQy-bh-GOx" id="d1s-tb-Bso"/>
                         <outlet property="calendarImage" destination="VOM-AE-MEG" id="RbU-uz-cXJ"/>
                         <outlet property="calendarScrollView" destination="vqF-m4-9w2" id="Uss-ds-kEl"/>
                         <outlet property="checkmark" destination="9dc-yR-gci" id="89O-Pv-O6W"/>
                         <outlet property="clock" destination="Qfn-m6-Na8" id="sfE-7P-j99"/>
-                        <outlet property="task1Gesture" destination="cNI-sj-oIh" id="wGx-vN-X2M"/>
-                        <outlet property="task2Gesture" destination="1NG-NW-iaQ" id="OO0-pb-Zce"/>
+                        <outlet property="dashboardPanGesture" destination="SCc-0n-RGy" id="rZw-Aj-5wi"/>
+                        <outlet property="errorPanGesture" destination="1NG-NW-iaQ" id="1RI-qV-UDV"/>
+                        <outlet property="homepagePanGesture" destination="5C2-xY-rx8" id="HOc-X5-j9x"/>
+                        <outlet property="q4PanGesture" destination="lkF-jg-sxr" id="4pq-z6-TVa"/>
                         <outlet property="taskPivotalError" destination="06e-Pm-wCy" id="bFo-xY-pPk"/>
                         <outlet property="taskPivotalHomePage" destination="uK0-jF-qki" id="m2D-6W-bDu"/>
                         <outlet property="taskPivotalRoadmap" destination="aWL-KF-PXF" id="LWf-OQ-eki"/>
                         <outlet property="taskScrollView" destination="iBd-Rt-5jv" id="9R7-wj-ED8"/>
                         <outlet property="taskTrelloBilling" destination="wKj-qy-Tdl" id="2cN-v4-do3"/>
                         <outlet property="taskTrelloDashboard" destination="XqC-uY-gmo" id="k92-AQ-KIf"/>
+                        <segue destination="qNC-VN-wQ9" kind="modal" identifier="dashboardSegue" id="Poy-Nj-FxX"/>
+                        <segue destination="Gtq-Aj-6mn" kind="modal" identifier="q4Segue" id="QbQ-Vr-8P5"/>
+                        <segue destination="i8p-Wz-KlX" kind="modal" identifier="homepageModalSegue" id="hdT-qG-lZn"/>
+                        <segue destination="V9B-ho-d66" kind="modal" identifier="billingModalSegue" id="p7Y-AG-JBX"/>
+                        <segue destination="2wk-rg-xB4" kind="modal" identifier="dashboardModalSegue" id="KZ4-L7-SS1"/>
+                        <segue destination="ZNR-B3-HvA" kind="modal" identifier="q4ModalSegue" id="qiy-UV-7Eg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -255,11 +256,6 @@
                         <action selector="onLongPress1:" destination="vXZ-lx-hvc" id="7zU-vj-f7X"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <tapGestureRecognizer id="6K1-pH-qCp" userLabel="Billing Tap Gesture">
-                    <connections>
-                        <action selector="onTap:" destination="vXZ-lx-hvc" id="zjc-ZC-rsq"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="1NG-NW-iaQ" userLabel="Error and Warning Pan Gesture">
                     <connections>
                         <action selector="didPanTask:" destination="vXZ-lx-hvc" id="qhG-JE-FCx"/>
@@ -270,7 +266,11 @@
                         <action selector="onLongPress1:" destination="vXZ-lx-hvc" id="MRJ-TE-Uv9"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="8yQ-fL-IOQ" userLabel="Homepage Spec Long Press"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="8yQ-fL-IOQ" userLabel="Homepage Spec Long Press">
+                    <connections>
+                        <action selector="onLongPress1:" destination="vXZ-lx-hvc" id="GuK-sD-6E1"/>
+                    </connections>
+                </pongPressGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="5C2-xY-rx8" userLabel="Homepage Pan Gesture">
                     <connections>
                         <action selector="didPanTask:" destination="vXZ-lx-hvc" id="RI8-Ja-sWx"/>
@@ -296,6 +296,16 @@
                         <action selector="didPanTask:" destination="vXZ-lx-hvc" id="OpV-Ks-jwv"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="vMv-fJ-iGC" userLabel="Dashboard Tap Gesture">
+                    <connections>
+                        <action selector="onDashboardTap:" destination="vXZ-lx-hvc" id="m4f-Nx-N1m"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="XU9-av-TXC" userLabel="Q4 Tap Gesture">
+                    <connections>
+                        <action selector="onQ4Tap:" destination="vXZ-lx-hvc" id="0A5-uT-Wi3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1035.5" y="781.5"/>
         </scene>
@@ -357,7 +367,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Lj-yt-BfM">
-                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <rect key="frame" x="11" y="20" width="39" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -414,7 +424,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="settings" id="BRl-bb-JtB">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="689"/>
+                                        <rect key="frame" x="0.0" y="-15" width="375" height="1010"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -440,11 +450,15 @@
                                         </connections>
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="4na-Sd-jCK">
-                                        <rect key="frame" x="308" y="482" width="51" height="31"/>
+                                        <rect key="frame" x="308" y="321" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="roF-OM-Qyg">
-                                        <rect key="frame" x="308" y="538" width="51" height="31"/>
+                                        <rect key="frame" x="308" y="379" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="CYs-xn-Bs7">
+                                        <rect key="frame" x="308" y="434" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </switch>
                                 </subviews>
@@ -465,6 +479,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="calendarSwitch" destination="CYs-xn-Bs7" id="vfi-pO-Nne"/>
                         <outlet property="emailField" destination="Bgj-lu-Q0Y" id="mGS-Pt-POb"/>
                         <outlet property="eventsSwitch" destination="4na-Sd-jCK" id="fU4-kt-5uq"/>
                         <outlet property="nameField" destination="Peh-3b-7x4" id="c8l-xe-L1Y"/>
@@ -480,7 +495,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="527.5" y="781.5"/>
+            <point key="canvasLocation" x="527.5" y="1530"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="4Os-jx-CDt">
@@ -638,6 +653,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dashboardModal-later" id="y0L-d7-XGb">
+                                <rect key="frame" x="22" y="127" width="330" height="296"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X7K-RN-5TD">
                                 <rect key="frame" x="167" y="561" width="41" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -645,22 +664,13 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="closeButton:" destination="2wk-rg-xB4" eventType="touchUpInside" id="thb-j9-Sxa"/>
-                                    <action selector="closebutton:" destination="2wk-rg-xB4" eventType="touchUpInside" id="Wsy-Dx-dJu"/>
+                                    <action selector="closebutton:" destination="2wk-rg-xB4" eventType="touchUpInside" id="gDM-Z4-r93"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-later" id="y0L-d7-XGb">
-                                <rect key="frame" x="22" y="127" width="330" height="296"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="pivotalModal" destination="y0L-d7-XGb" id="nHl-92-qRR"/>
-                        <outlet property="trelloModal" destination="y0L-d7-XGb" id="hHh-y1-J1l"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKP-UJ-f9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -668,11 +678,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="billingModal-complete" width="330" height="257"/>
         <image name="calendar" width="375" height="1471"/>
         <image name="calendar-header" width="375" height="30"/>
         <image name="checkmark" width="20" height="16"/>
         <image name="clock" width="20" height="20"/>
         <image name="close-button" width="41" height="41"/>
+        <image name="dashboardModal-later" width="330" height="296"/>
+        <image name="homepageModal-complete" width="330" height="282"/>
         <image name="list-button" width="20" height="20"/>
         <image name="meeting" width="210" height="184"/>
         <image name="meeting-2" width="275" height="47"/>
@@ -682,21 +695,18 @@
         <image name="pivotal - home page specs" width="375" height="89"/>
         <image name="pivotal - q4 roadmap" width="375" height="118"/>
         <image name="pivotal-action" width="375" height="75"/>
-        <image name="pivotal-archive" width="330" height="282"/>
         <image name="pivotal-card-task" width="375" height="1068"/>
-        <image name="pivotal-later" width="330" height="297"/>
         <image name="pivotal-nav-bar" width="375" height="64"/>
-        <image name="settings" width="375" height="689"/>
+        <image name="q4Modal-later" width="330" height="297"/>
+        <image name="settings" width="375" height="1012"/>
         <image name="settings-button" width="22" height="21"/>
         <image name="settings-nav" width="375" height="64"/>
         <image name="tasks-header" width="375" height="30"/>
         <image name="trello - billing info" width="375" height="70"/>
         <image name="trello - dashboard" width="375" height="118"/>
         <image name="trello-action" width="375" height="75"/>
-        <image name="trello-archive" width="330" height="257"/>
         <image name="trello-card-nav" width="375" height="64"/>
         <image name="trello-card-task" width="375" height="1150"/>
-        <image name="trello-later" width="330" height="296"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

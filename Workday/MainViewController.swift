@@ -56,6 +56,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
         
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         scrollView.delegate = self
             
         todayViewController = storyboard.instantiateViewControllerWithIdentifier("TodayViewController") as UIViewController

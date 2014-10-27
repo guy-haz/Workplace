@@ -10,7 +10,6 @@ import UIKit
 
 class PivotalLaterViewController: UIViewController {
 
-    @IBOutlet weak var pivotalModal: UIImageView!
     @IBAction func closeButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }

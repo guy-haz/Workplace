@@ -9,11 +9,14 @@
 import UIKit
 
 class PivotalArchiveViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func closeButton(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

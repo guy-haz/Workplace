@@ -10,7 +10,6 @@ import UIKit
 
 class TrelloLaterViewController: UIViewController {
 
-    @IBOutlet weak var trelloModal: UIImageView!
     @IBAction func closebutton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
