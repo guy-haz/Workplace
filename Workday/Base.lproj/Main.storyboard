@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-later" id="fno-vX-YbX">
-                                <rect key="frame" x="22" y="137" width="333" height="344"/>
+                                <rect key="frame" x="22" y="137" width="330" height="297"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bCs-IK-kFF">
@@ -352,12 +352,12 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-nav-bar" id="8xp-30-HlS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-action" id="5SA-ng-You">
                                 <rect key="frame" x="0.0" y="592" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pivotal-nav-bar" id="8xp-30-HlS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -591,7 +591,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trello-later" id="y0L-d7-XGb">
-                                <rect key="frame" x="22" y="127" width="333" height="342"/>
+                                <rect key="frame" x="22" y="127" width="330" height="296"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -624,7 +624,7 @@
         <image name="pivotal-action" width="375" height="75"/>
         <image name="pivotal-archive" width="330" height="282"/>
         <image name="pivotal-card-task" width="375" height="1068"/>
-        <image name="pivotal-later" width="333" height="344"/>
+        <image name="pivotal-later" width="330" height="297"/>
         <image name="pivotal-nav-bar" width="375" height="64"/>
         <image name="settings" width="375" height="689"/>
         <image name="settings-nav" width="375" height="64"/>
@@ -637,7 +637,7 @@
         <image name="trello-archive" width="330" height="257"/>
         <image name="trello-card-nav" width="375" height="64"/>
         <image name="trello-card-task" width="375" height="1150"/>
-        <image name="trello-later" width="333" height="314"/>
+        <image name="trello-later" width="330" height="296"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
