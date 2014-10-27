@@ -125,33 +125,33 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="vqF-m4-9w2" userLabel="Calendar Scroll View">
-                                <rect key="frame" x="0.0" y="352" width="375" height="315"/>
+                                <rect key="frame" x="0.0" y="381" width="375" height="286"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="calendar" id="VOM-AE-MEG">
-                                        <rect key="frame" x="0.0" y="6" width="375" height="1471"/>
+                                        <rect key="frame" x="0.0" y="-23" width="375" height="1471"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meeting-2" id="ddS-9H-NVQ">
-                                        <rect key="frame" x="105" y="756" width="275" height="47"/>
+                                        <rect key="frame" x="105" y="727" width="275" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meeting" id="ROj-zI-bas">
-                                        <rect key="frame" x="105" y="486" width="210" height="184"/>
+                                        <rect key="frame" x="105" y="457" width="210" height="184"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meeting-4" id="gFg-Rl-yc2">
-                                        <rect key="frame" x="156" y="506" width="210" height="116"/>
+                                        <rect key="frame" x="156" y="477" width="210" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iBd-Rt-5jv" userLabel="Task Scroll View">
-                                <rect key="frame" x="0.0" y="104" width="375" height="209"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="TMm-JU-fIo">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="0.0" y="2" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" id="9dc-yR-gci">
@@ -166,7 +166,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="trello - billing info" id="wKj-qy-Tdl">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="2" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -176,7 +176,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - error and warning states" id="06e-Pm-wCy">
-                                        <rect key="frame" x="0.0" y="70" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -184,7 +184,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - new user" id="LpA-5F-y3F">
-                                        <rect key="frame" x="0.0" y="140" width="375" height="118"/>
+                                        <rect key="frame" x="0.0" y="142" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -192,22 +192,22 @@
                                         </connections>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - styleguide android" id="HDX-R7-MKz">
-                                        <rect key="frame" x="0.0" y="258" width="375" height="118"/>
+                                        <rect key="frame" x="0.0" y="260" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - home page specs" id="uK0-jF-qki">
-                                        <rect key="frame" x="0.0" y="376" width="375" height="89"/>
+                                        <rect key="frame" x="0.0" y="378" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - q4 roadmap" id="aWL-KF-PXF">
-                                        <rect key="frame" x="0.0" y="465" width="375" height="118"/>
+                                        <rect key="frame" x="0.0" y="467" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - dashboard" id="XqC-uY-gmo">
-                                        <rect key="frame" x="0.0" y="583" width="375" height="118"/>
+                                        <rect key="frame" x="0.0" y="585" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                     </imageView>
@@ -216,12 +216,12 @@
                                 <gestureRecognizers/>
                             </scrollView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tasks-header" id="hLJ-Dg-L8A">
-                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-header" id="NQy-bh-GOx">
-                                <rect key="frame" x="0.0" y="-353" width="375" height="1373"/>
+                                <rect key="frame" x="0.0" y="352" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -649,7 +649,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="375" height="1471"/>
-        <image name="calendar-header" width="375" height="40"/>
+        <image name="calendar-header" width="375" height="30"/>
         <image name="checkmark" width="20" height="16"/>
         <image name="clock" width="20" height="20"/>
         <image name="close-button" width="41" height="41"/>
@@ -667,7 +667,7 @@
         <image name="pivotal-nav-bar" width="375" height="64"/>
         <image name="settings" width="375" height="689"/>
         <image name="settings-nav" width="375" height="64"/>
-        <image name="tasks-header" width="375" height="40"/>
+        <image name="tasks-header" width="375" height="30"/>
         <image name="trello - billing info" width="375" height="70"/>
         <image name="trello - dashboard" width="375" height="118"/>
         <image name="trello - new user" width="375" height="118"/>
