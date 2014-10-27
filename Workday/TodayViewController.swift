@@ -241,11 +241,12 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 if translation.x < 0 {
                     clock.alpha = 1
                     clock.center.x = translation.x + 410
-                    clock.center.y = 32
+                    clock.center.y = tasktoSegue.center.y
+
                 } else if translation.x > 0 {
                     checkmark.alpha = 1
                     checkmark.center.x = translation.x - 30
-                    checkmark.center.y = 32
+                    checkmark.center.y = tasktoSegue.center.y
                 }
                 
                 
