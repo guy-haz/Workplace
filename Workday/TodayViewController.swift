@@ -16,29 +16,26 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     @IBOutlet weak var placedTask: UIView!
 
     @IBOutlet weak var calendarHeader: UIImageView!
-    @IBOutlet weak var task1: UIImageView!
-    @IBOutlet weak var task2: UIImageView!
-    @IBOutlet weak var task3: UIImageView!
-    
+   
     // Task list
     @IBOutlet weak var taskTrelloBilling: UIImageView!
     @IBOutlet weak var taskPivotalError: UIImageView!
-    @IBOutlet weak var taskTrelloNew: UIImageView!
-    @IBOutlet weak var taskTrelloStyleguide: UIImageView!
     @IBOutlet weak var taskPivotalHomePage: UIImageView!
     @IBOutlet weak var taskPivotalRoadmap: UIImageView!
     @IBOutlet weak var taskTrelloDashboard: UIImageView!
     
     
     var task1Copy: UIImageView!
+    var taskOriginal: UIImageView!
     var panGesture: UIPanGestureRecognizer!
     var originalPressDownLocation : CGPoint!
     var originalImageCenter : CGPoint!
     var taskFrame : CGRect!
     
+    
+    
     @IBOutlet var task1Gesture: UIPanGestureRecognizer!
     @IBOutlet var task2Gesture: UIPanGestureRecognizer!
-    @IBOutlet var task3Gesture: UIPanGestureRecognizer!
     
     var taskLocation : CGPoint!
     var taskScrollViewIsScrolling = false
@@ -71,27 +68,24 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 //        trelloArchiveViewController = storyboard.instantiateViewControllerWithIdentifier("TrelloArchiveViewController") as UIViewController
 //        trelloLaterViewController = storyboard.instantiateViewControllerWithIdentifier("TrelloLaterViewController") as UIViewController
 
-        
+
 
         checkmark.alpha = 0
         clock.alpha = 0
         
         var taskTrelloBillingHeight = taskTrelloBilling.image!.size.height
-        var taskTrelloNewHeight = taskTrelloNew.image!.size.height
-        var taskTrelloStyleguideHeight = taskTrelloStyleguide.image!.size.height
         var taskTrelloDashboardHeight = taskTrelloDashboard.image!.size.height
         var taskPivotalErrorHeight = taskPivotalError.image!.size.height
         var taskPivotalHomePageHeight = taskPivotalHomePage.image!.size.height
         var taskPivotalRoadmapHeight = taskPivotalRoadmap.image!.size.height
         
-        var scrollHeight = taskTrelloBillingHeight + taskTrelloNewHeight + taskTrelloStyleguideHeight + taskTrelloDashboardHeight + taskPivotalErrorHeight + taskPivotalHomePageHeight + taskPivotalRoadmapHeight
+        var scrollHeight = taskTrelloBillingHeight + taskTrelloDashboardHeight + taskPivotalErrorHeight + taskPivotalHomePageHeight + taskPivotalRoadmapHeight
 
 
         println("total is \(scrollHeight)")
         
         task1Gesture.delegate = self
         task2Gesture.delegate = self
-        task3Gesture.delegate = self
         
         taskScrollView.contentSize = CGSize(width: 375, height: scrollHeight)
         
@@ -102,16 +96,23 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     }
 
     
+    
     /*---------Turning on simultaneous gestures--------------------------*/
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer!, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer!) -> Bool {
         return true
     }
     
+
+    
     @IBAction func onTap(sender: UITapGestureRecognizer) {
         println("tapped")
+        
+        
     }
     @IBAction func onLongPress1(sender: UILongPressGestureRecognizer) {
+        
+        taskOriginal = sender.view as UIImageView!
         
         taskLocation = sender.locationInView(view)
         
@@ -120,15 +121,15 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             
             task1Gesture.enabled = false
             
-            task1.alpha = 0.5
+            taskOriginal.alpha = 0.5
             
             originalPressDownLocation = taskLocation
-            var originalImageCenter = task1.center
+            var originalImageCenter = taskOriginal.center
             
             //Create Copy of Task 1
-            taskFrame = view.convertRect(task1.frame, fromView: taskScrollView)
+            taskFrame = view.convertRect(taskOriginal.frame, fromView: taskScrollView)
             task1Copy = UIImageView(frame: taskFrame)
-            task1Copy.image = task1.image
+            task1Copy.image = taskOriginal.image
             
             //transform it
             UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: nil, animations:{ () -> Void in
@@ -181,7 +182,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             })
             
             task1Gesture.enabled = true
-            task1.alpha = 1.0
+            taskOriginal.alpha = 1.0
             
         }
         
@@ -217,12 +218,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         var translation = sender.translationInView(view)
         var velocity = sender.velocityInView(view)
         
-        
-        
-        if translation.x > 0 || translation.x < 0 {
-            
-        }
-        
+
         if taskScrollViewIsScrolling == false {
             
             if sender.state == UIGestureRecognizerState.Began {
@@ -267,6 +263,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 })
                 
                 taskScrollView.scrollEnabled = true
+                println("horse is \(taskScrollView.scrollEnabled)")
                 
             }
             

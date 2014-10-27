@@ -125,29 +125,29 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="vqF-m4-9w2" userLabel="Calendar Scroll View">
-                                <rect key="frame" x="0.0" y="381" width="375" height="286"/>
+                                <rect key="frame" x="0.0" y="407" width="375" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="calendar" id="VOM-AE-MEG">
-                                        <rect key="frame" x="0.0" y="-23" width="375" height="1471"/>
+                                        <rect key="frame" x="0.0" y="-49" width="375" height="1471"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meeting-2" id="ddS-9H-NVQ">
-                                        <rect key="frame" x="105" y="727" width="275" height="47"/>
+                                        <rect key="frame" x="105" y="701" width="275" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meeting" id="ROj-zI-bas">
-                                        <rect key="frame" x="105" y="457" width="210" height="184"/>
+                                        <rect key="frame" x="105" y="431" width="210" height="184"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meeting-4" id="gFg-Rl-yc2">
-                                        <rect key="frame" x="156" y="477" width="210" height="116"/>
+                                        <rect key="frame" x="156" y="451" width="210" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iBd-Rt-5jv" userLabel="Task Scroll View">
-                                <rect key="frame" x="0.0" y="92" width="375" height="260"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="286"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="TMm-JU-fIo">
@@ -166,7 +166,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="trello - billing info" id="wKj-qy-Tdl">
-                                        <rect key="frame" x="0.0" y="2" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="236" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -176,40 +176,40 @@
                                         </connections>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - error and warning states" id="06e-Pm-wCy">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="306" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="1NG-NW-iaQ" appends="YES" id="Bhz-E3-9WV"/>
+                                            <outletCollection property="gestureRecognizers" destination="yvC-Te-Kj4" appends="YES" id="k1j-AE-ybG"/>
                                         </connections>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - new user" id="LpA-5F-y3F">
-                                        <rect key="frame" x="0.0" y="142" width="375" height="118"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - home page specs" id="uK0-jF-qki">
+                                        <rect key="frame" x="0.0" y="376" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="0fJ-xc-LjJ" appends="YES" id="QLm-Gt-qd6"/>
+                                            <outletCollection property="gestureRecognizers" destination="8yQ-fL-IOQ" appends="YES" id="o9k-KS-YEm"/>
+                                            <outletCollection property="gestureRecognizers" destination="5C2-xY-rx8" appends="YES" id="mci-Hs-wt1"/>
                                         </connections>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - styleguide android" id="HDX-R7-MKz">
-                                        <rect key="frame" x="0.0" y="260" width="375" height="118"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <gestureRecognizers/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - home page specs" id="uK0-jF-qki">
-                                        <rect key="frame" x="0.0" y="378" width="375" height="89"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <gestureRecognizers/>
-                                    </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pivotal - q4 roadmap" id="aWL-KF-PXF">
-                                        <rect key="frame" x="0.0" y="467" width="375" height="118"/>
+                                        <rect key="frame" x="0.0" y="118" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="KHe-7A-ML6" appends="YES" id="iSy-I0-pnO"/>
+                                            <outletCollection property="gestureRecognizers" destination="lkF-jg-sxr" appends="YES" id="V5Y-3P-tA3"/>
+                                        </connections>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trello - dashboard" id="XqC-uY-gmo">
-                                        <rect key="frame" x="0.0" y="585" width="375" height="118"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="tEQ-Jf-t0N" appends="YES" id="A3b-N0-0jn"/>
+                                            <outletCollection property="gestureRecognizers" destination="SCc-0n-RGy" appends="YES" id="4cF-qe-yeB"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -221,7 +221,7 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-header" id="NQy-bh-GOx">
-                                <rect key="frame" x="0.0" y="352" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="378" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -234,48 +234,68 @@
                         <outlet property="calendarScrollView" destination="vqF-m4-9w2" id="Uss-ds-kEl"/>
                         <outlet property="checkmark" destination="9dc-yR-gci" id="89O-Pv-O6W"/>
                         <outlet property="clock" destination="Qfn-m6-Na8" id="sfE-7P-j99"/>
-                        <outlet property="task1" destination="wKj-qy-Tdl" id="3Bp-Xh-eTE"/>
                         <outlet property="task1Gesture" destination="cNI-sj-oIh" id="wGx-vN-X2M"/>
-                        <outlet property="task2" destination="06e-Pm-wCy" id="gAb-7s-5Yd"/>
                         <outlet property="task2Gesture" destination="1NG-NW-iaQ" id="OO0-pb-Zce"/>
-                        <outlet property="task3" destination="LpA-5F-y3F" id="Hkq-du-c9Z"/>
-                        <outlet property="task3Gesture" destination="0fJ-xc-LjJ" id="1uR-cJ-yTQ"/>
                         <outlet property="taskPivotalError" destination="06e-Pm-wCy" id="bFo-xY-pPk"/>
                         <outlet property="taskPivotalHomePage" destination="uK0-jF-qki" id="m2D-6W-bDu"/>
                         <outlet property="taskPivotalRoadmap" destination="aWL-KF-PXF" id="LWf-OQ-eki"/>
                         <outlet property="taskScrollView" destination="iBd-Rt-5jv" id="9R7-wj-ED8"/>
                         <outlet property="taskTrelloBilling" destination="wKj-qy-Tdl" id="2cN-v4-do3"/>
                         <outlet property="taskTrelloDashboard" destination="XqC-uY-gmo" id="k92-AQ-KIf"/>
-                        <outlet property="taskTrelloNew" destination="LpA-5F-y3F" id="taR-kW-Rvx"/>
-                        <outlet property="taskTrelloStyleguide" destination="HDX-R7-MKz" id="jOS-x9-Fzt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="cNI-sj-oIh" userLabel="Task 1 Pan Gesture Recognizer">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="cNI-sj-oIh" userLabel="Billing Info Pan Gesture">
                     <connections>
                         <action selector="didPanTask:" destination="vXZ-lx-hvc" id="cfr-N7-eiz"/>
                     </connections>
                 </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="1NG-NW-iaQ" userLabel="Task 2 Pan Gesture Recognizer">
-                    <connections>
-                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="qhG-JE-FCx"/>
-                    </connections>
-                </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="0fJ-xc-LjJ" userLabel="Task 3 Pan Gesture Recognizer">
-                    <connections>
-                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="7mm-YB-Mhz"/>
-                    </connections>
-                </panGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="8uX-JP-QR0" userLabel="Task 1 Long Press Gesture Recognizer">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="8uX-JP-QR0" userLabel="Billing Info Long Press">
                     <connections>
                         <action selector="onLongPress1:" destination="vXZ-lx-hvc" id="7zU-vj-f7X"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <tapGestureRecognizer id="6K1-pH-qCp">
+                <tapGestureRecognizer id="6K1-pH-qCp" userLabel="Billing Tap Gesture">
                     <connections>
                         <action selector="onTap:" destination="vXZ-lx-hvc" id="zjc-ZC-rsq"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="1NG-NW-iaQ" userLabel="Error and Warning Pan Gesture">
+                    <connections>
+                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="qhG-JE-FCx"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="yvC-Te-Kj4" userLabel="Error and Warning Long Press">
+                    <connections>
+                        <action selector="onLongPress1:" destination="vXZ-lx-hvc" id="MRJ-TE-Uv9"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="8yQ-fL-IOQ" userLabel="Homepage Spec Long Press"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="5C2-xY-rx8" userLabel="Homepage Pan Gesture">
+                    <connections>
+                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="RI8-Ja-sWx"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="KHe-7A-ML6" userLabel="Q4 Long Press">
+                    <connections>
+                        <action selector="onLongPress1:" destination="vXZ-lx-hvc" id="6WE-Dq-ez0"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="lkF-jg-sxr" userLabel="Q4 Pan Gesture">
+                    <connections>
+                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="pWG-iF-AEw"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="tEQ-Jf-t0N" userLabel="Dashboard Long Press">
+                    <connections>
+                        <action selector="onLongPress1:" destination="vXZ-lx-hvc" id="Csz-2t-wFX"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="SCc-0n-RGy" userLabel="Dashboard Pan Gesture">
+                    <connections>
+                        <action selector="didPanTask:" destination="vXZ-lx-hvc" id="OpV-Ks-jwv"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1035.5" y="781.5"/>
         </scene>
@@ -470,7 +490,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="CP8-px-IF8">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" id="CP8-px-IF8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
@@ -478,20 +498,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="x3X-vH-gnc">
-                                <rect key="frame" x="340" y="27" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x3X-vH-gnc">
+                                <rect key="frame" x="345" y="30" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
+                                <state key="normal" image="list-button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="kjD-5f-bx7" kind="modal" id="IIa-8A-lhT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3g0-n7-Olh">
-                                <rect key="frame" x="9" y="27" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3g0-n7-Olh">
+                                <rect key="frame" x="13" y="30" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
+                                <state key="normal" image="settings-button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -513,16 +533,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" id="fly-KN-Tby">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <rect key="frame" x="60" y="0.0" width="251" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="dYG-gE-cXM">
-                                        <rect key="frame" x="138" y="52" width="5" height="5"/>
+                                        <rect key="frame" x="78" y="52" width="5" height="5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.99906796216964722" green="0.8885161280632019" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" id="B9L-S8-4CQ">
-                                        <rect key="frame" x="214" y="65" width="5" height="5"/>
+                                        <rect key="frame" x="154" y="65" width="5" height="5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.16153541207313538" green="0.0" blue="0.72323673963546753" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -653,6 +673,7 @@
         <image name="checkmark" width="20" height="16"/>
         <image name="clock" width="20" height="20"/>
         <image name="close-button" width="41" height="41"/>
+        <image name="list-button" width="20" height="20"/>
         <image name="meeting" width="210" height="184"/>
         <image name="meeting-2" width="275" height="47"/>
         <image name="meeting-4" width="210" height="116"/>
@@ -666,12 +687,11 @@
         <image name="pivotal-later" width="330" height="297"/>
         <image name="pivotal-nav-bar" width="375" height="64"/>
         <image name="settings" width="375" height="689"/>
+        <image name="settings-button" width="22" height="21"/>
         <image name="settings-nav" width="375" height="64"/>
         <image name="tasks-header" width="375" height="30"/>
         <image name="trello - billing info" width="375" height="70"/>
         <image name="trello - dashboard" width="375" height="118"/>
-        <image name="trello - new user" width="375" height="118"/>
-        <image name="trello - styleguide android" width="375" height="118"/>
         <image name="trello-action" width="375" height="75"/>
         <image name="trello-archive" width="330" height="257"/>
         <image name="trello-card-nav" width="375" height="64"/>

@@ -15,12 +15,16 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     var todayViewController : UIViewController!
     var tomorrowViewController : UIViewController!
     
+    
+    
     //define transition assets
     @IBOutlet weak var todayDot: UIView!
     @IBOutlet weak var tomorrowDot: UIView!
     @IBOutlet weak var todayLabel: UILabel!
     @IBOutlet weak var tomorrowLabel: UILabel!
 
+    var leftEdgeGesture: UIScreenEdgePanGestureRecognizer!
+    var rightEdgeGesture: UIScreenEdgePanGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +41,20 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         
         
+        leftEdgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onLeftEdgePan:")
+        leftEdgeGesture.edges = UIRectEdge.Left
+        view.addGestureRecognizer(leftEdgeGesture)
         
+        
+        rightEdgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onRightEdgePan:")
+        rightEdgeGesture.edges = UIRectEdge.Right
+        view.addGestureRecognizer(rightEdgeGesture)
         
 
-            
+        leftEdgeGesture.enabled = false
+
+
+        
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         scrollView.delegate = self
             
@@ -60,6 +74,32 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         tomorrowViewController.didMoveToParentViewController(self)
 
         // Do any additional setup after loading the view.
+    }
+    
+    /*--------------------- Edge Pan Gesture --------------------------*/
+    
+    func onRightEdgePan(gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
+//        scrollView.scrollEnabled = true
+    
+        
+        var translation = gestureRecognizer.translationInView(view)
+        scrollView.contentOffset.x = 375
+        
+
+        println("edgeRight")
+        
+        if scrollView.contentOffset.x >= 375 {
+            leftEdgeGesture.enabled = true
+
+        }
+        
+    }
+    
+    func onLeftEdgePan(gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
+//        scrollView.scrollEnabled = true
+        println("edgeLeft")
+        scrollView.contentOffset.x = 0
+
     }
 
     override func didReceiveMemoryWarning() {
