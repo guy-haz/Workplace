@@ -8,12 +8,14 @@
 
 import UIKit
 
-class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+    
+    var isPresenting: Bool = true
+    
     @IBOutlet weak var calendarScrollView: UIScrollView!
     @IBOutlet weak var taskScrollView: UIScrollView!
     
     @IBOutlet weak var calendarImage: UIImageView!
-    @IBOutlet weak var placedTask: UIView!
 
     @IBOutlet weak var calendarHeader: UIImageView!
    
@@ -45,12 +47,18 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     var taskLocation : CGPoint!
     var taskScrollViewIsScrolling = false
     var tasktoSegue : UIImageView!
+    var taskTapped : UIImageView!
     var taskCenter: CGPoint!
     var imageView: UIImageView!
     
     @IBOutlet weak var checkmark: UIImageView!
     @IBOutlet weak var clock: UIImageView!
     
+    var segueIsModal: Bool!
+    var segueIsDetail: Bool!
+    var taskIsPanning: Bool!
+    
+    var parentScrollview: UIScrollView!
     
     // View from the storyboard
 //    var todayViewController: UIViewController!
@@ -77,6 +85,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 
         checkmark.alpha = 0
         clock.alpha = 0
+        
+        taskIsPanning = false
         
         var taskTrelloBillingHeight = taskTrelloBilling.image!.size.height
         var taskTrelloDashboardHeight = taskTrelloDashboard.image!.size.height
@@ -114,12 +124,17 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 
     
     @IBAction func onQ4Tap(sender: UITapGestureRecognizer) {
-        performSegueWithIdentifier("q4Segue", sender: self)
+        
+        tasktoSegue = sender.view as UIImageView
+        performSegueWithIdentifier("dashboardSegue", sender: self)
 
     }
 
     @IBAction func onDashboardTap(sender: UITapGestureRecognizer) {
+        
+        tasktoSegue = sender.view as UIImageView
         performSegueWithIdentifier("dashboardSegue", sender: self)
+        
     }
     
     
@@ -245,6 +260,9 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             
             if sender.state == UIGestureRecognizerState.Began {
                 
+                parentScrollview.scrollEnabled = false
+                println("parent scroll is off")
+                
                 taskCenter = tasktoSegue.center
                 
             } else if sender.state == UIGestureRecognizerState.Changed {
@@ -271,26 +289,16 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             } else if sender.state == UIGestureRecognizerState.Ended {
                 // Swipe left to do later
                 if translation.x < -60 {
-
-                    if tasktoSegue.image == UIImage(named: "trello - dashboard") {
-                        performSegueWithIdentifier("dashboardModalSegue", sender: self)
-                    } else if tasktoSegue.image == UIImage(named: "pivotal - q4 roadmap") {
-                        performSegueWithIdentifier("q4ModalSegue", sender: self)
-                    }
-                    
+                        
+                        performSegueWithIdentifier("ModalSegue", sender: self)
 
                 }
                 
                 // Swipe right to archive
                 if translation.x > 60 {
+                        
+                        performSegueWithIdentifier("ModalSegue", sender: self)
 
-                    if tasktoSegue.image == UIImage(named: "trello - billing info") {
-                        performSegueWithIdentifier("billingModalSegue", sender: self)
-                        println("trello billing")
-                    } else if tasktoSegue.image == UIImage(named: "pivotal - home page specs") {
-                        println("pivotal")
-                        performSegueWithIdentifier("homepageModalSegue", sender: self)
-                    }
                 }
                 
                 
@@ -298,8 +306,11 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     self.tasktoSegue.frame.origin.x = 0
                 })
                 
+                
+                parentScrollview.scrollEnabled = true
+                println("parent scroll is on!")
                 taskScrollView.scrollEnabled = true
-                println("horse is \(taskScrollView.scrollEnabled)")
+                //println("horse is \(taskScrollView.scrollEnabled)")
                 
             }
             
@@ -309,10 +320,175 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     }
     
     
+    /*-------------CUSTOM TRANSITIONS------------------------------*/
     
+    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = true
+        return self
+    }
     
+    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = false
+        return self
+    }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        if segue.identifier == "ModalSegue" {
+            
+            segueIsModal = true
+            segueIsDetail = false
+
+            var modalViewController = segue.destinationViewController as TrelloArchiveViewController
+            modalViewController.taskPanned = self.tasktoSegue.image
+            
+            println("Modal")
+            var destinationVC = segue.destinationViewController as UIViewController
+            destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationVC.transitioningDelegate = self
+            
+        } else if segue.identifier == "dashboardSegue" {
+            
+            segueIsDetail = true
+            segueIsModal = false
+            
+            var detailViewController = segue.destinationViewController as TrelloTaskViewController
+            detailViewController.taskTapped = self.tasktoSegue.image
+            
+            println("Detail")
+            var destinationVC = segue.destinationViewController as UIViewController
+            destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationVC.transitioningDelegate = self
+            
+        }
+        
+        
+    }
     
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+        // The value here should be the duration of the animations scheduled in the animationTransition method
+        return 0.4
+    }
+    
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        
+        var containerView = transitionContext.containerView()
+        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        
+        
+        
+        // Modal is Presenting
+        if (isPresenting) && segueIsModal == true {
+            
+            println("animating Modal TO transition")
+            
+            let vc = toViewController as TrelloArchiveViewController
+            
+            vc.imageModal.transform = CGAffineTransformMakeTranslation(0, 600)
+            vc.closeButton.alpha = 0
+            
+            containerView.addSubview(toViewController.view)
+            toViewController.view.alpha = 0
+            
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                
+                toViewController.view.alpha = 1
+                
+                }) { (finished: Bool) -> Void in
+                    
+                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                        
+                        vc.imageModal.transform = CGAffineTransformMakeTranslation(0, 0)
+                        
+                    }, completion: nil)
+                    
+                    
+                    UIView.animateWithDuration(0.5, delay: 0.2, options: nil, animations: { () -> Void in
+                        
+                        vc.closeButton.alpha = 1
+                        
+                    }, completion: nil)
+                            
+                    
+                    
+                    transitionContext.completeTransition(true)
+            }
+            
+        
+        // Detail is Presenting
+        } else if (isPresenting) && segueIsDetail == true {
+            
+            println("animating Detail TO transition")
+            
+            let vc = toViewController as TrelloTaskViewController
+            
+            containerView.addSubview(toViewController.view)
+            toViewController.view.alpha = 0
+            
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                toViewController.view.alpha = 1
+                }) { (finished: Bool) -> Void in
+                    
+                    transitionContext.completeTransition(true)
+            }
+            
+        // Modal is returning
+        } else if segueIsModal == true {
+            
+            let vc = fromViewController as TrelloArchiveViewController
+            
+            println("animating Modal FROM transition")
+            
+            UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: { () -> Void in
+                
+                vc.closeButton.alpha = 0
+                
+                }, completion: nil)
+            
+            UIView.animateWithDuration(0.7, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: nil, animations: { () -> Void in
+                
+                vc.imageModal.transform = CGAffineTransformMakeTranslation(0, 600)
+                
+                }, completion: nil)
+            
+            UIView.animateWithDuration(0.4, delay: 0.5, options: nil, animations: { () -> Void in
+                
+                fromViewController.view.alpha = 0
+
+                }, completion: { (finished: Bool) -> Void in
+                    
+                    transitionContext.completeTransition(true)
+                    fromViewController.view.removeFromSuperview()
+                    
+            })
+            
+        // Detail is returning
+        } else if segueIsDetail == true {
+            
+            println("animating Detail FROM transition")
+            
+            let vc = fromViewController as TrelloTaskViewController
+            
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                
+                fromViewController.view.alpha = 0
+                }) { (finished: Bool) -> Void in
+                    
+                    transitionContext.completeTransition(true)
+                    fromViewController.view.removeFromSuperview()
+            }
+
+            
+        }
+        
+        
+        
+        
+    // end of custom transition
+    }
+
+
     
     
     

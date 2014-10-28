@@ -12,8 +12,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var todayViewController : UIViewController!
-    var tomorrowViewController : UIViewController!
+    var todayViewController : TodayViewController!
+    var tomorrowViewController : TomorrowViewController!
     
     
     
@@ -59,8 +59,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.delegate = self
             
-        todayViewController = storyboard.instantiateViewControllerWithIdentifier("TodayViewController") as UIViewController
-        tomorrowViewController = storyboard.instantiateViewControllerWithIdentifier("TomorrowViewController") as UIViewController
+        todayViewController = storyboard.instantiateViewControllerWithIdentifier("TodayViewController") as TodayViewController
+        tomorrowViewController = storyboard.instantiateViewControllerWithIdentifier("TomorrowViewController") as TomorrowViewController
+        
+        todayViewController.parentScrollview = scrollView
+        
         
         scrollView.contentSize = CGSize(width: 750, height: scrollView.frame.height)
             
