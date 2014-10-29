@@ -12,11 +12,15 @@ class AllTasksViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var allTasksImage: UIImageView!
+    @IBOutlet weak var allTasksSearchBar: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.contentSize = allTasksImage.image!.size
+        var scrollHeight = allTasksImage.image!.size.height + allTasksSearchBar.image!.size.height
+        
+        scrollView.contentSize = CGSizeMake(375, scrollHeight)
+        scrollView.contentOffset.y = 43
 
         // Do any additional setup after loading the view.
     }
