@@ -12,11 +12,14 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     
     var isPresenting: Bool = true
     
+    // NSUserDefaults --------------------------------------------------------------------
+    var defaults = NSUserDefaults.standardUserDefaults()
+    
     @IBOutlet weak var calendarScrollView: UIScrollView!
     @IBOutlet weak var taskScrollView: UIScrollView!
+    @IBOutlet weak var tasksLabel: UILabel!
     
     @IBOutlet weak var calendarImage: UIImageView!
-
     @IBOutlet weak var calendarHeader: UIImageView!
    
     // Task list
@@ -26,7 +29,6 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     @IBOutlet weak var taskPivotalRoadmap: UIImageView!
     @IBOutlet weak var taskTrelloDashboard: UIImageView!
     
-    
     var task1Copy: UIImageView!
     var taskOriginal: UIImageView!
     var panGesture: UIPanGestureRecognizer!
@@ -34,15 +36,11 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     var originalImageCenter : CGPoint!
     var taskFrame : CGRect!
     
-    
-    
     @IBOutlet var billingInfoPanGesture: UIPanGestureRecognizer!
     @IBOutlet var errorPanGesture: UIPanGestureRecognizer!
     @IBOutlet var homepagePanGesture: UIPanGestureRecognizer!
     @IBOutlet var q4PanGesture: UIPanGestureRecognizer!
     @IBOutlet var dashboardPanGesture: UIPanGestureRecognizer!
-    
-    
     
     var taskLocation : CGPoint!
     var taskScrollViewIsScrolling = false
@@ -58,18 +56,22 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     var segueIsDetail: Bool!
     var taskIsPanning: Bool!
     
+    var taskTrelloBillingHeight : CGFloat!
+    var taskTrelloDashboardHeight : CGFloat!
+    var taskPivotalErrorHeight : CGFloat!
+    var taskPivotalHomePageHeight : CGFloat!
+    var taskPivotalRoadmapHeight : CGFloat!
+    
     var parentScrollview: UIScrollView!
-    
-    // View from the storyboard
-//    var todayViewController: UIViewController!
-//    var trelloArchiveViewController: UIViewController!
-//    var trelloLaterViewController: UIViewController!
-    
-
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var initalVal = defaults.integerForKey("dashboard-moved")
+        println(" On load NSUserDefaults------------------ is \(initalVal)")
+
+        
         calendarScrollView.contentSize = calendarImage.image!.size
         
         //make sure that the scrollview starts at 1PM (current time is 12.18 PM)
@@ -77,25 +79,19 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         
         // Adding the Storyboard and views
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        todayViewController = storyboard.instantiateViewControllerWithIdentifier("TodayViewController") as UIViewController
-//        trelloArchiveViewController = storyboard.instantiateViewControllerWithIdentifier("TrelloArchiveViewController") as UIViewController
-//        trelloLaterViewController = storyboard.instantiateViewControllerWithIdentifier("TrelloLaterViewController") as UIViewController
-
-
 
         checkmark.alpha = 0
         clock.alpha = 0
         
         taskIsPanning = false
         
-        var taskTrelloBillingHeight = taskTrelloBilling.image!.size.height
-        var taskTrelloDashboardHeight = taskTrelloDashboard.image!.size.height
-        var taskPivotalErrorHeight = taskPivotalError.image!.size.height
-        var taskPivotalHomePageHeight = taskPivotalHomePage.image!.size.height
-        var taskPivotalRoadmapHeight = taskPivotalRoadmap.image!.size.height
+        taskTrelloBillingHeight = taskTrelloBilling.image!.size.height
+        taskTrelloDashboardHeight = taskTrelloDashboard.image!.size.height
+        taskPivotalErrorHeight = taskPivotalError.image!.size.height
+        taskPivotalHomePageHeight = taskPivotalHomePage.image!.size.height
+        taskPivotalRoadmapHeight = taskPivotalRoadmap.image!.size.height
         
         var scrollHeight = taskTrelloBillingHeight + taskTrelloDashboardHeight + taskPivotalErrorHeight + taskPivotalHomePageHeight + taskPivotalRoadmapHeight
-
 
         println("total is \(scrollHeight)")
         
@@ -105,15 +101,13 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         q4PanGesture.delegate = self
         dashboardPanGesture.delegate = self
         
-        taskScrollView.contentSize = CGSize(width: 375, height: scrollHeight)
-        
         taskScrollView.delegate = self
         calendarScrollView.delegate = self
         
+        taskScrollView.contentSize = CGSize(width: 375, height: scrollHeight)
+        
         // Do any additional setup after loading the view.
     }
-
-    
     
     /*---------Turning on simultaneous gestures--------------------------*/
     
@@ -182,16 +176,15 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 
         } else if sender.state == UIGestureRecognizerState.Changed {
             
-            println("Changed long press at \(taskLocation)")
+            //println("Changed long press at \(taskLocation)")
             let translation = CGPoint(x:originalPressDownLocation.x - taskLocation.x, y:originalPressDownLocation.y - taskLocation.y)
             
-            //            task1Copy.center.x = originalPressDownLocation.x - translation.x
-            //            task1Copy.center.y = originalPressDownLocation.y - translation.y
             task1Copy.frame.origin.x = taskFrame.origin.x - translation.x
             task1Copy.frame.origin.y = taskFrame.origin.y - translation.y
             
             //this will make the calendar scroll when the task is dragged to the bottom of the screen, and the velocity is taking into account the direction (downward in this case)
-            if task1Copy.center.y > 602 && calendarScrollView.contentOffset.y < 1471{
+            
+            if task1Copy.center.y > 602 && calendarScrollView.contentOffset.y < 1209{
                 println("welcome to the bottom")
                 calendarScrollView.contentOffset.y  = calendarScrollView.contentOffset.y + 10
                 println("\(calendarScrollView.contentOffset.y)")
@@ -460,6 +453,91 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
+                    
+                    
+                    // NSUserDefaults --------------------------------------------------------------------
+                    
+                    var initalVal = self.defaults.integerForKey("task-moved")
+                    println("On returning NSUserDefaults------------------ is \(initalVal)")
+                    
+                    var scrollHeight1 = self.taskTrelloBillingHeight + self.taskPivotalErrorHeight + self.taskPivotalHomePageHeight + self.taskPivotalRoadmapHeight
+                    
+                    var scrollHeight2 = self.taskTrelloBillingHeight + self.taskPivotalErrorHeight + self.taskPivotalHomePageHeight
+                    
+                    var scrollHeight3 = self.taskTrelloBillingHeight + self.taskPivotalErrorHeight
+                    
+                    //fist task removed
+                    if initalVal == 1 {
+                        
+                        println("get out of here new hieght is \(scrollHeight1)")
+                        
+                        if (self.taskTrelloDashboard != nil) {
+                            
+                            self.taskTrelloDashboard.removeFromSuperview()
+                            self.tasksLabel.text = "4 Tasks"
+                            
+                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                                
+                                self.taskPivotalRoadmap.frame.origin.y -= self.taskTrelloDashboardHeight
+                                self.taskTrelloBilling.frame.origin.y -= self.taskTrelloDashboardHeight
+                                self.taskPivotalError.frame.origin.y -= self.taskTrelloDashboardHeight
+                                self.taskPivotalHomePage.frame.origin.y -= self.taskTrelloDashboardHeight
+                                self.taskScrollView.contentSize.height -= self.taskTrelloDashboardHeight
+                                
+                                }, completion: nil)
+                            
+                        }
+                        
+                    //second task removed
+                    } else if initalVal == 2 {
+                        
+                        println("get out of here new hieght is \(scrollHeight2)")
+                        
+                        if (self.taskPivotalRoadmap != nil) {
+                            
+                            self.taskPivotalRoadmap.removeFromSuperview()
+                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                                
+                                self.taskTrelloBilling.frame.origin.y -= self.taskPivotalRoadmapHeight
+                                self.taskPivotalError.frame.origin.y -= self.taskPivotalRoadmapHeight
+                                self.taskPivotalHomePage.frame.origin.y -= self.taskPivotalRoadmapHeight
+                                self.taskScrollView.contentSize.height -= self.taskPivotalRoadmapHeight - 1
+                                
+                                self.taskScrollView.frame = CGRectMake(0, 94, 375, 229)
+                                self.calendarHeader.frame.origin.y = 320
+                                self.calendarScrollView.frame = CGRectMake(0, 320, 375, 347)
+                                self.tasksLabel.text = "3 Tasks"
+
+                                
+                                }, completion: nil)
+                        }
+                        
+                    // third task removed
+                    } else if initalVal == 3 {
+                        
+                        println("get out of here new hieght is \(scrollHeight3)")
+                        
+                        if (self.taskPivotalHomePage != nil) {
+                            
+                            self.taskPivotalHomePage.removeFromSuperview()
+                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                                
+//                                self.taskTrelloBilling.frame.origin.y -= self.taskPivotalRoadmapHeight
+//                                self.taskPivotalError.frame.origin.y -= self.taskPivotalRoadmapHeight
+//                                self.taskPivotalHomePage.frame.origin.y -= self.taskPivotalRoadmapHeight
+//                                self.taskScrollView.contentSize.height -= self.taskPivotalRoadmapHeight
+//                                self.taskScrollView.frame = CGRectMake(0, 94, 375, 229)
+//                                self.calendarHeader.frame.origin.y = 320
+//                                self.calendarScrollView.frame = CGRectMake(0, 320, 375, 347)
+                                self.tasksLabel.text = "2 Tasks"
+                                
+                                
+                                }, completion: nil)
+                        }
+                        
+                        
+                    } //
+                    
                     
             })
             
