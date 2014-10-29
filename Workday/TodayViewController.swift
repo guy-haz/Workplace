@@ -307,12 +307,14 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 
             } else if task1Copy.center.y > 0 {
                 
-                UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                     
                     self.task1Copy.transform = CGAffineTransformMakeScale(1, 1)
                     self.task1Copy.layer.shadowOffset = CGSizeMake(0, 0)
                     self.task1Copy.alpha = 0
                     self.taskOriginal.alpha = 1.0
+                    var taskFrame = self.view.convertRect(self.taskOriginal.frame, fromView: self.taskScrollView)
+                    self.task1Copy.frame = taskFrame
                     
                     }, completion: { (finished: Bool) -> Void in
                         
