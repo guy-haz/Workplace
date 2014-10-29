@@ -111,6 +111,10 @@
                                             <outletCollection property="gestureRecognizers" destination="Y8h-aI-lMr" appends="YES" id="0Fb-74-3vH"/>
                                         </connections>
                                     </view>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pick-up-car" id="hJv-lL-Elj">
+                                        <rect key="frame" x="100" y="138" width="275" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="iBd-Rt-5jv" userLabel="Task Scroll View">
@@ -605,20 +609,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1471"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="massage" id="zn7-KG-KJN">
-                                        <rect key="frame" x="50" y="93" width="275" height="185"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pick-up-car" id="hJv-lL-Elj">
-                                        <rect key="frame" x="50" y="74" width="275" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="brand-kick-off" id="z61-aW-srX">
-                                        <rect key="frame" x="8" y="139" width="275" height="45"/>
+                                        <rect key="frame" x="100" y="230" width="275" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="walk-the-dog" id="1tY-92-Weh">
-                                        <rect key="frame" x="-31" y="31" width="275" height="45"/>
+                                        <rect key="frame" x="101" y="46" width="275" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="massage" id="zn7-KG-KJN">
+                                        <rect key="frame" x="100" y="368" width="275" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                 </subviews>
