@@ -232,6 +232,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         } else if sender.state == UIGestureRecognizerState.Ended {
             
             //fade out the original copy when it is placed
+            
+            println("horse is true")
 
             
             if task1Copy.center.y < 404 && task1Copy.image == UIImage(named: "pivotal - home page specs") {
