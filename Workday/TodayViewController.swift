@@ -588,6 +588,9 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             
             println("animating Modal FROM transition")
             
+            self.clock.frame.origin.x = 375
+            self.checkmark.frame.origin.x = 375
+            
             UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: { () -> Void in
                 
                 vc.closeButton.alpha = 0
@@ -657,7 +660,6 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                                 self.taskPivotalError.frame.origin.y -= self.taskPivotalRoadmapHeight
                                 self.taskPivotalHomePage.frame.origin.y -= self.taskPivotalRoadmapHeight
                                 self.taskScrollView.contentSize.height -= self.taskPivotalRoadmapHeight - 1
-                                
                                 self.taskScrollView.frame = CGRectMake(0, 94, 375, 229)
                                 self.calendarHeader.frame.origin.y = 320
                                 self.backToNow.frame.origin.y = 324
