@@ -31,7 +31,7 @@ class TrelloArchiveViewController: UIViewController {
             let laterButton = UIButton()
             laterButton.setTitle("", forState: .Normal)
             laterButton.frame = CGRectMake(22, 305, 330, 60)
-            laterButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            laterButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
             laterButton.addTarget(self, action: "dashboardLaterButtonPressed:", forControlEvents: .TouchUpInside)
             self.view.addSubview(laterButton)
         
@@ -46,7 +46,7 @@ class TrelloArchiveViewController: UIViewController {
             let tomorrowButton = UIButton()
             tomorrowButton.setTitle("", forState: .Normal)
             tomorrowButton.frame = CGRectMake(22, 243, 330, 60)
-            tomorrowButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            tomorrowButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
             tomorrowButton.addTarget(self, action: "Q4TomorrowButtonPressed:", forControlEvents: .TouchUpInside)
             self.view.addSubview(tomorrowButton)
 
@@ -75,7 +75,7 @@ class TrelloArchiveViewController: UIViewController {
             let finishButton = UIButton()
             finishButton.setTitle("", forState: .Normal)
             finishButton.frame = CGRectMake(22, 358, 330, 60)
-            finishButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            finishButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
             finishButton.addTarget(self, action: "homeFinishButtonPressed:", forControlEvents: .TouchUpInside)
             self.view.addSubview(finishButton)
 
