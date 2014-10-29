@@ -621,7 +621,6 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             UIView.animateWithDuration(0.4, delay: 0.5, options: nil, animations: { () -> Void in
                 
                 fromViewController.view.alpha = 0
-                self.tasktoSegue.alpha = 0
 
                 }, completion: { (finished: Bool) -> Void in
                     
@@ -647,8 +646,14 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                         
                         if (self.taskTrelloDashboard != nil) {
                             
-                            self.taskTrelloDashboard.removeFromSuperview()
-                            self.tasksLabel.text = "4 Tasks"
+                            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                                self.tasktoSegue.alpha = 0
+
+                                }, completion: { (finished: Bool) -> Void in
+                                    self.taskTrelloDashboard.removeFromSuperview()
+                                    self.tasksLabel.text = "4 Tasks"
+                            })
+                            
                             
                             UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
                                 
@@ -669,7 +674,15 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                         
                         if (self.taskPivotalRoadmap != nil) {
                             
-                            self.taskPivotalRoadmap.removeFromSuperview()
+                            
+                            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                                self.tasktoSegue.alpha = 0
+                                
+                                }, completion: { (finished: Bool) -> Void in
+                                    self.taskPivotalRoadmap.removeFromSuperview()
+                                    self.tasksLabel.text = "3 Tasks"
+                            })
+                            
                             UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
                                 
                                 self.taskTrelloBilling.frame.origin.y -= self.taskPivotalRoadmapHeight
@@ -680,7 +693,6 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                                 self.calendarHeader.frame.origin.y = 320
                                 self.backToNow.frame.origin.y = 324
                                 self.calendarScrollView.frame = CGRectMake(0, 320, 375, 347)
-                                self.tasksLabel.text = "3 Tasks"
 
                                 
                                 }, completion: nil)
