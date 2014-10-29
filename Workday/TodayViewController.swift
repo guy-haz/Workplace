@@ -65,23 +65,39 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     @IBOutlet weak var taskOnCalendar: UIView!
     @IBOutlet weak var taskOnCalendarText: UIImageView!
     
+    @IBOutlet weak var unread1: UIView!
+    @IBOutlet weak var unread2: UIView!
+    
+    @IBOutlet weak var backToNow: UIButton!
+    
     var parentScrollview: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        var defaults = NSUserDefaults.standardUserDefaults()
+//        var initalVal = defaults.integerForKey("dashboard-moved")
+//        println(" On load NSUserDefaults------------------ is \(initalVal)")
+        
         var defaults = NSUserDefaults.standardUserDefaults()
-        var initalVal = defaults.integerForKey("dashboard-moved")
-        println(" On load NSUserDefaults------------------ is \(initalVal)")
+        var initalVal = defaults.integerForKey("task-read")
+        println(" On load NSUserDefaults for task-read is ------------------ is \(initalVal)")
 
         
         // task dropped on calendar shit
         taskOnCalendar.alpha = 0
         taskOnCalendarText.alpha = 0
         
+        // unread tasks shit
+        unread1.layer.cornerRadius = 4
+        unread2.layer.cornerRadius = 4
+        taskPivotalRoadmap.addSubview(unread2)
+        taskTrelloDashboard.addSubview(unread1)
+        unread2.frame.origin = CGPoint(x: 6, y: 21)
+        
         calendarScrollView.contentSize = calendarImage.image!.size
         
-        //make sure that the scrollview starts at 1PM (current time is 12.18 PM)
+        //make sure that the scrollview starts at 1PM (current time is 9.18 PM)
         calendarScrollView.contentOffset.y = 250
         
         // Adding the Storyboard and views
@@ -138,6 +154,20 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         
     }
     
+    @IBAction func didTapBackToNow(sender: UIButton) {
+        
+        
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            
+            self.calendarScrollView.contentOffset.y = 250
+            
+            }, completion: { (finished: Bool) -> Void in
+                
+            //completion
+                
+        })
+        
+    }
     
     @IBAction func onLongPress1(sender: UILongPressGestureRecognizer) {
         
@@ -630,6 +660,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                                 
                                 self.taskScrollView.frame = CGRectMake(0, 94, 375, 229)
                                 self.calendarHeader.frame.origin.y = 320
+                                self.backToNow.frame.origin.y = 324
                                 self.calendarScrollView.frame = CGRectMake(0, 320, 375, 347)
                                 self.tasksLabel.text = "3 Tasks"
 
@@ -670,6 +701,29 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         } else if segueIsDetail == true {
             
             println("animating Detail FROM transition")
+            
+            var initalVal = self.defaults.integerForKey("task-read")
+            println("Tasks Read ------------------ is \(initalVal)")
+            
+            if initalVal == 1 {
+                
+                if (self.unread1 != nil) {
+                    
+                    println("task one removed")
+                    unread1.removeFromSuperview()
+                    
+                }
+                
+            } else if initalVal == 2 {
+                
+                if (self.unread2 != nil) {
+                    
+                    println("task two removed")
+                    unread2.removeFromSuperview()
+                    
+                }
+
+            }
             
             let vc = fromViewController as TrelloTaskViewController
             containerView.transform = CGAffineTransformMakeTranslation(0, 0)

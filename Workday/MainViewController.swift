@@ -34,6 +34,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         defaults.setInteger(0, forKey: "task-moved")
         defaults.synchronize()
         
+        defaults.setInteger(0, forKey: "task-read")
+        defaults.synchronize()
+        
         //set up transition assests
         todayDot.layer.cornerRadius = 2.5
         tomorrowDot.layer.cornerRadius = 2.5
@@ -46,17 +49,17 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         
         
-        leftEdgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onLeftEdgePan:")
-        leftEdgeGesture.edges = UIRectEdge.Left
-        view.addGestureRecognizer(leftEdgeGesture)
-        
-        
-        rightEdgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onRightEdgePan:")
-        rightEdgeGesture.edges = UIRectEdge.Right
-        view.addGestureRecognizer(rightEdgeGesture)
-        
-
-        leftEdgeGesture.enabled = false
+//        leftEdgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onLeftEdgePan:")
+//        leftEdgeGesture.edges = UIRectEdge.Left
+//        view.addGestureRecognizer(leftEdgeGesture)
+//        
+//        
+//        rightEdgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onRightEdgePan:")
+//        rightEdgeGesture.edges = UIRectEdge.Right
+//        view.addGestureRecognizer(rightEdgeGesture)
+//        
+//
+//        leftEdgeGesture.enabled = false
 
 
         

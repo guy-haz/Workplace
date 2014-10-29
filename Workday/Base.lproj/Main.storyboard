@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbs-Qi-6pF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527.5" y="2577.5"/>
+            <point key="canvasLocation" x="527.5" y="1713.5"/>
         </scene>
         <!--Today View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -60,21 +60,10 @@
                                 <rect key="frame" x="0.0" y="407" width="375" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meeting-2" id="ddS-9H-NVQ">
-                                        <rect key="frame" x="105" y="701" width="275" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meeting" id="ROj-zI-bas">
-                                        <rect key="frame" x="105" y="431" width="210" height="184"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meeting-4" id="gFg-Rl-yc2">
-                                        <rect key="frame" x="156" y="451" width="210" height="116"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="calendar" id="VOM-AE-MEG">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1471"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="interview" id="J8g-kh-Tim">
                                         <rect key="frame" x="102" y="368" width="274" height="45"/>
@@ -183,6 +172,16 @@
                                             <outletCollection property="gestureRecognizers" destination="yvC-Te-Kj4" appends="YES" id="k1j-AE-ybG"/>
                                         </connections>
                                     </imageView>
+                                    <view contentMode="scaleToFill" id="fIy-ht-zHX" userLabel="unreadView2">
+                                        <rect key="frame" x="6" y="139" width="8" height="8"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.27091407775878906" green="0.43895843625068665" blue="0.6465727686882019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="ZKq-Bt-AZm" userLabel="unreadView1">
+                                        <rect key="frame" x="6" y="21" width="8" height="8"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.27091407775878906" green="0.43895843625068665" blue="0.6465727686882019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
@@ -203,11 +202,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JKc-Kj-iJK">
+                                <rect key="frame" x="5" y="382" width="362" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapBackToNow:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="o19-nx-9py"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="backToNow" destination="JKc-Kj-iJK" id="OJN-AP-kcs"/>
                         <outlet property="billingInfoPanGesture" destination="cNI-sj-oIh" id="pZm-91-c9D"/>
                         <outlet property="calendarHeader" destination="NQy-bh-GOx" id="d1s-tb-Bso"/>
                         <outlet property="calendarImage" destination="VOM-AE-MEG" id="RbU-uz-cXJ"/>
@@ -227,6 +237,8 @@
                         <outlet property="taskTrelloBilling" destination="wKj-qy-Tdl" id="2cN-v4-do3"/>
                         <outlet property="taskTrelloDashboard" destination="XqC-uY-gmo" id="k92-AQ-KIf"/>
                         <outlet property="tasksLabel" destination="ode-l9-ONw" id="oFS-7M-aew"/>
+                        <outlet property="unread1" destination="ZKq-Bt-AZm" id="9pU-ru-Yxa"/>
+                        <outlet property="unread2" destination="fIy-ht-zHX" id="j8b-bg-3Hc"/>
                         <segue destination="qNC-VN-wQ9" kind="modal" identifier="dashboardSegue" id="Poy-Nj-FxX"/>
                         <segue destination="V9B-ho-d66" kind="modal" identifier="ModalSegue" id="p7Y-AG-JBX"/>
                     </connections>
@@ -287,16 +299,16 @@
                         <action selector="onDashboardTap:" destination="vXZ-lx-hvc" id="m4f-Nx-N1m"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="XU9-av-TXC" userLabel="Q4 Tap Gesture">
-                    <connections>
-                        <action selector="onQ4Tap:" destination="vXZ-lx-hvc" id="0A5-uT-Wi3"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <pinchGestureRecognizer id="Y8h-aI-lMr" userLabel="Task on Calendar Pinch Gesture Recognizer">
                     <connections>
                         <action selector="didPinchTaskOnCalendar:" destination="vXZ-lx-hvc" id="1Lt-1V-Ssn"/>
                     </connections>
                 </pinchGestureRecognizer>
+                <tapGestureRecognizer id="XU9-av-TXC" userLabel="Q4 Tap Gesture">
+                    <connections>
+                        <action selector="onQ4Tap:" destination="vXZ-lx-hvc" id="0A5-uT-Wi3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="246.5" y="845.5"/>
         </scene>
@@ -349,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQ2-Hf-IPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16.5" y="2577.5"/>
+            <point key="canvasLocation" x="-16.5" y="1713.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="LmO-v7-pW0">
@@ -555,7 +567,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="tasksSearchBar" id="bZG-3g-KlE">
-                                        <rect key="frame" x="3" y="0.0" width="375" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                 </subviews>
@@ -583,7 +595,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="LJV-Hb-kp9" userLabel="Task Scroll View">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="LJV-Hb-kp9" userLabel="Task Scroll View">
                                 <rect key="frame" x="0.0" y="94" width="375" height="286"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -601,7 +613,7 @@
                                     </imageView>
                                 </subviews>
                             </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="K1E-u4-vrA" userLabel="Calendar Scroll View">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="K1E-u4-vrA" userLabel="Calendar Scroll View">
                                 <rect key="frame" x="0.0" y="407" width="375" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -662,9 +674,6 @@
         <image name="ios-for-designers" width="275" height="185"/>
         <image name="list-button" width="20" height="20"/>
         <image name="massage" width="275" height="185"/>
-        <image name="meeting" width="210" height="184"/>
-        <image name="meeting-2" width="275" height="47"/>
-        <image name="meeting-4" width="210" height="116"/>
         <image name="nav-bar" width="375" height="64"/>
         <image name="pick-up-car" width="275" height="45"/>
         <image name="pivotal - error and warning states" width="375" height="70"/>
