@@ -10,31 +10,25 @@ import UIKit
 
 class AllTasksViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var allTasksImage: UIImageView!
+    @IBOutlet weak var allTasksSearchBar: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var scrollHeight = allTasksImage.image!.size.height + allTasksSearchBar.image!.size.height
+        
+        scrollView.contentSize = CGSizeMake(375, scrollHeight)
+        scrollView.contentOffset.y = 43
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     @IBAction func didPressBack(sender: UIButton) {
         
         dismissViewControllerAnimated(true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
 }

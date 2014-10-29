@@ -9,13 +9,14 @@
 import UIKit
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
+   
+    // NSUserDefaults --------------------------------------------------------------------
+    var defaults = NSUserDefaults.standardUserDefaults()
 
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var todayViewController : UIViewController!
-    var tomorrowViewController : UIViewController!
-    
-    
+    var todayViewController : TodayViewController!
+    var tomorrowViewController : TomorrowViewController!
     
     //define transition assets
     @IBOutlet weak var todayDot: UIView!
@@ -28,6 +29,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // NSUserDefaults --------------------------------------------------------------------
+        defaults.setInteger(0, forKey: "task-moved")
+        defaults.synchronize()
         
         //set up transition assests
         todayDot.layer.cornerRadius = 2.5
@@ -59,8 +64,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.delegate = self
             
-        todayViewController = storyboard.instantiateViewControllerWithIdentifier("TodayViewController") as UIViewController
-        tomorrowViewController = storyboard.instantiateViewControllerWithIdentifier("TomorrowViewController") as UIViewController
+        todayViewController = storyboard.instantiateViewControllerWithIdentifier("TodayViewController") as TodayViewController
+        tomorrowViewController = storyboard.instantiateViewControllerWithIdentifier("TomorrowViewController") as TomorrowViewController
+        
+        todayViewController.parentScrollview = scrollView
+        
         
         scrollView.contentSize = CGSize(width: 750, height: scrollView.frame.height)
             

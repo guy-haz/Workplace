@@ -10,10 +10,29 @@ import UIKit
 
 class TomorrowViewController: UIViewController {
 
+    @IBOutlet weak var taskScrollView: UIScrollView!
+    @IBOutlet weak var calendarScrollView: UIScrollView!
+    
+    @IBOutlet weak var task1: UIImageView!
+    @IBOutlet weak var task2: UIImageView!
+    @IBOutlet weak var task3: UIImageView!
+    
+    @IBOutlet weak var calendarImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        var task1Height = task1.image!.size.height
+        var task2Height = task2.image!.size.height
+        var task3Height = task3.image!.size.height
+        
+        var scrollHeight = task1Height + task2Height + task2Height
+        taskScrollView.contentSize = CGSizeMake(375, scrollHeight)
+        
+        calendarScrollView.contentSize = calendarImage.image!.size
+        
     }
 
     override func didReceiveMemoryWarning() {
