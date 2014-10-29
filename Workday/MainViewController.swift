@@ -27,6 +27,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     var leftEdgeGesture: UIScreenEdgePanGestureRecognizer!
     var rightEdgeGesture: UIScreenEdgePanGestureRecognizer!
     
+    @IBOutlet weak var goToToday: UIButton!
+    @IBOutlet weak var goToTomorrow: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,6 +91,52 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+    /*--------------------- Today - Tomorrow Buttons --------------------------*/
+    
+    @IBAction func didPressOnTodayButton(sender: UIButton) {
+        
+        println("today was pushed")
+    
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            
+            self.scrollView.contentOffset.x = 0
+            self.todayDot.frame.origin.y = 52
+            self.tomorrowDot.frame.origin.y = 65
+            self.todayLabel.textColor = UIColor(red: 0.27, green: 0.44, blue: 0.63, alpha: 1)
+            self.tomorrowLabel.textColor = UIColor(red: 0.80, green: 0.81, blue: 0.85, alpha: 1)
+            
+            }, completion: { (finished: Bool) -> Void in
+                
+                //completion
+                
+        })
+        
+    }
+    
+    
+    @IBAction func didPressTomorrowButton(sender: UIButton) {
+        
+        println("tomorrow was pushed")
+        
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            
+            self.scrollView.contentOffset.x = 375
+            self.todayDot.frame.origin.y = 65
+            self.tomorrowDot.frame.origin.y = 52
+            self.tomorrowLabel.textColor = UIColor(red: 0.27, green: 0.44, blue: 0.63, alpha: 1)
+            self.todayLabel.textColor = UIColor(red: 0.80, green: 0.81, blue: 0.85, alpha: 1)
+            
+            }, completion: { (finished: Bool) -> Void in
+                
+                //completion
+                
+        })
+   
+        
+    }
+    
+    
+    
     /*--------------------- Edge Pan Gesture --------------------------*/
     
     func onRightEdgePan(gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
@@ -106,6 +155,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         }
         
     }
+    
     
     func onLeftEdgePan(gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
 //        scrollView.scrollEnabled = true

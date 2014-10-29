@@ -96,6 +96,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         unread2.frame.origin = CGPoint(x: 6, y: 21)
         
         calendarScrollView.contentSize = calendarImage.image!.size
+        calendarScrollView.decelerationRate = 0.5
         
         //make sure that the scrollview starts at 1PM (current time is 9.18 PM)
         calendarScrollView.contentOffset.y = 250
@@ -268,7 +269,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             
             if task1Copy.center.y < 404 && task1Copy.image == UIImage(named: "pivotal - home page specs") {
                 
-                UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                     
                     self.task1Copy.transform = CGAffineTransformMakeScale(1, 1)
                     self.task1Copy.layer.shadowOffset = CGSizeMake(0, 0)
@@ -285,14 +286,24 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 })
                 
             } else if task1Copy.center.y > 404 && task1Copy.image == UIImage(named: "trello - billing info") {
-                                
-                taskOnCalendar.alpha = 1
-                taskOnCalendarText.alpha = 1
-                taskOnCalendar.layer.borderWidth = 2
-                taskOnCalendar.layer.cornerRadius = 4
-                taskOnCalendar.layer.borderColor =  UIColor(red: 0.27, green: 0.44, blue: 0.63, alpha: 1).CGColor
                 
-                self.task1Copy.removeFromSuperview()
+                UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: { () -> Void in
+                    
+                    self.taskOnCalendar.alpha = 1
+                    self.taskOnCalendarText.alpha = 1
+                    self.taskOnCalendar.layer.borderWidth = 2
+                    self.taskOnCalendar.layer.cornerRadius = 4
+                    self.taskOnCalendar.layer.borderColor =  UIColor(red: 0.27, green: 0.44, blue: 0.63, alpha: 1).CGColor
+                    self.taskOriginal.alpha = 1
+                    var taskFrame = self.view.convertRect(self.taskOnCalendar.frame, fromView: self.calendarScrollView)
+                    self.task1Copy.frame = taskFrame
+                    self.task1Copy.alpha = 0
+                    
+                    }, completion: { (finished: Bool) -> Void in
+                        
+                        self.task1Copy.removeFromSuperview()
+                })
+                
                 
             } else if task1Copy.center.y > 0 {
                 
@@ -590,6 +601,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             
             self.clock.frame.origin.x = 375
             self.checkmark.frame.origin.x = 375
+            self.tasktoSegue.alpha = 1
             
             UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: { () -> Void in
                 
@@ -606,6 +618,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             UIView.animateWithDuration(0.4, delay: 0.5, options: nil, animations: { () -> Void in
                 
                 fromViewController.view.alpha = 0
+                self.tasktoSegue.alpha = 0
 
                 }, completion: { (finished: Bool) -> Void in
                     
