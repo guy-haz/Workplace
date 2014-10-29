@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllTasksViewController: UIViewController {
+class AllTasksViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var allTasksImage: UIImageView!
@@ -16,6 +16,8 @@ class AllTasksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.delegate = self
         
         var scrollHeight = allTasksImage.image!.size.height + allTasksSearchBar.image!.size.height
         
@@ -30,5 +32,14 @@ class AllTasksViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y < 43 && scrollView.contentOffset.y > 0 {
+            
+            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                scrollView.contentOffset.y = 43
+            }, completion: nil)
+
+        }
+    }
   
 }
