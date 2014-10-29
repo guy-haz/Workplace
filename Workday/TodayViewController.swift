@@ -603,10 +603,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             
             self.clock.frame.origin.x = 375
             self.checkmark.frame.origin.x = 375
-<<<<<<< HEAD
-=======
             self.tasktoSegue.alpha = 1
->>>>>>> Henry-Oct-28
+
             
             UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: { () -> Void in
                 
