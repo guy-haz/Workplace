@@ -24,14 +24,14 @@ class TrelloArchiveViewController: UIViewController {
         if taskPanned == UIImage(named: "trello - dashboard") {
             
             println("dashboard wireframes")
-            imageModal.image = UIImage(named: "dashboardModal-later")
+            imageModal.image = UIImage(named: "dashboard-wireframes-modal")
             imageModal.sizeToFit()
             imageModal.frame.origin.y = 137
             
             let laterButton = UIButton()
             laterButton.setTitle("", forState: .Normal)
-            laterButton.frame = CGRectMake(22, 305, 330, 60)
-            laterButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            laterButton.frame = CGRectMake(22, 295, 330, 60)
+            laterButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
             laterButton.addTarget(self, action: "dashboardLaterButtonPressed:", forControlEvents: .TouchUpInside)
             self.view.addSubview(laterButton)
         
@@ -39,14 +39,14 @@ class TrelloArchiveViewController: UIViewController {
         } else if taskPanned == UIImage(named: "pivotal - q4 roadmap") {
             
             println("Q4 road map")
-            imageModal.image = UIImage(named: "q4Modal-later")
+            imageModal.image = UIImage(named: "roadmap-modal")
             imageModal.sizeToFit()
             imageModal.frame.origin.y = 137
             
             let tomorrowButton = UIButton()
             tomorrowButton.setTitle("", forState: .Normal)
-            tomorrowButton.frame = CGRectMake(22, 243, 330, 60)
-            tomorrowButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            tomorrowButton.frame = CGRectMake(22, 257, 330, 60)
+            tomorrowButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
             tomorrowButton.addTarget(self, action: "Q4TomorrowButtonPressed:", forControlEvents: .TouchUpInside)
             self.view.addSubview(tomorrowButton)
 
@@ -54,28 +54,44 @@ class TrelloArchiveViewController: UIViewController {
         } else if taskPanned == UIImage(named: "trello - billing info") {
             
             println("billing info with apple pay")
-            imageModal.image = UIImage(named: "billingModal-complete")
+            imageModal.image = UIImage(named: "billing-info-modal")
             imageModal.sizeToFit()
             imageModal.frame.origin.y = 137
             
+            let archiveButton = UIButton()
+            archiveButton.setTitle("", forState: .Normal)
+            archiveButton.frame = CGRectMake(22, 255, 330, 64)
+            archiveButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            archiveButton.addTarget(self, action: "billingInfoButtonPressed:", forControlEvents: .TouchUpInside)
+            self.view.addSubview(archiveButton)
+            
         // Error and Warning States
-        } else if taskPanned == UIImage(named: "pivotal - error and warning states") {
+        } else if taskPanned == UIImage(named: "pivotal - error and warning") {
             
             println("error and wearning states")
-            println("no available image")
-            
-        // Home page Specs
-        } else if taskPanned == UIImage(named: "pivotal - home page specs") {
-            
-            println("homepage specs")
-            imageModal.image = UIImage(named: "homepageModal-complete")
+            imageModal.image = UIImage(named: "error-states-modal")
             imageModal.sizeToFit()
             imageModal.frame.origin.y = 137
             
             let finishButton = UIButton()
             finishButton.setTitle("", forState: .Normal)
-            finishButton.frame = CGRectMake(22, 358, 330, 60)
-            finishButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            finishButton.frame = CGRectMake(22, 295, 330, 64)
+            finishButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+            finishButton.addTarget(self, action: "errorStatesButtonPressed:", forControlEvents: .TouchUpInside)
+            self.view.addSubview(finishButton)
+            
+        // Home page Specs
+        } else if taskPanned == UIImage(named: "pivotal - home page specs") {
+            
+            println("homepage specs")
+            imageModal.image = UIImage(named: "homepage-modal")
+            imageModal.sizeToFit()
+            imageModal.frame.origin.y = 137
+            
+            let finishButton = UIButton()
+            finishButton.setTitle("", forState: .Normal)
+            finishButton.frame = CGRectMake(22, 340, 330, 60)
+            finishButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
             finishButton.addTarget(self, action: "homeFinishButtonPressed:", forControlEvents: .TouchUpInside)
             self.view.addSubview(finishButton)
 
@@ -113,6 +129,27 @@ class TrelloArchiveViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    func billingInfoButtonPressed(sender: UIButton) {
+        
+        defaults.setInteger(4, forKey: "task-moved")
+        defaults.synchronize()
+        var initalVal = defaults.integerForKey("task-moved")
+        println("On archive pressed NSUserDefaults------------------ is \(initalVal)")
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    func errorStatesButtonPressed(sender: UIButton) {
+        
+        defaults.setInteger(5, forKey: "task-moved")
+        defaults.synchronize()
+        var initalVal = defaults.integerForKey("task-moved")
+        println("On archive pressed NSUserDefaults------------------ is \(initalVal)")
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
 
     @IBAction func closeButton(sender: UIButton) {
         

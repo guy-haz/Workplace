@@ -31,6 +31,7 @@
 		BA8536E319F4AF730026DC17 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E219F4AF730026DC17 /* MainViewController.swift */; };
 		BA8536E519F4AFA20026DC17 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */; };
 		BA8536E719F4AFC90026DC17 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8536E619F4AFC90026DC17 /* AllTasksViewController.swift */; };
+		BAC492321A06FEBF00103706 /* ModalFromDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC492311A06FEBF00103706 /* ModalFromDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		BA8536E219F4AF730026DC17 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BA8536E419F4AFA20026DC17 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BA8536E619F4AFC90026DC17 /* AllTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
+		BAC492311A06FEBF00103706 /* ModalFromDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalFromDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				7B8CEE5119F474BE00BCC156 /* AppDelegate.swift */,
 				7B8CEE5319F474BE00BCC156 /* ViewController.swift */,
 				7B8CEE5519F474BE00BCC156 /* Main.storyboard */,
+				BAC492311A06FEBF00103706 /* ModalFromDetailViewController.swift */,
 				40A678E019FCEA2900A5FF81 /* TrelloArchiveViewController.swift */,
 				40A678DA19FCE55E00A5FF81 /* TrelloTaskViewController.swift */,
 				BA8536E619F4AFC90026DC17 /* AllTasksViewController.swift */,
@@ -289,6 +292,7 @@
 				7B8CEE5419F474BE00BCC156 /* ViewController.swift in Sources */,
 				40A678E119FCEA2900A5FF81 /* TrelloArchiveViewController.swift in Sources */,
 				BA8536E719F4AFC90026DC17 /* AllTasksViewController.swift in Sources */,
+				BAC492321A06FEBF00103706 /* ModalFromDetailViewController.swift in Sources */,
 				7B8CEE5219F474BE00BCC156 /* AppDelegate.swift in Sources */,
 				7B8CEE7219F47C1A00BCC156 /* TodayViewController.swift in Sources */,
 				BA8536E119F4AF290026DC17 /* TomorrowViewController.swift in Sources */,
