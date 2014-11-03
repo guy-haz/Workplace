@@ -218,6 +218,10 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.27091407775878906" green="0.43895843625068665" blue="0.6465727686882019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="end" id="kpE-wG-sPX">
+                                        <rect key="frame" x="95" y="32" width="184" height="265"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
@@ -261,6 +265,7 @@
                         <outlet property="checkmark" destination="9dc-yR-gci" id="89O-Pv-O6W"/>
                         <outlet property="clock" destination="Qfn-m6-Na8" id="sfE-7P-j99"/>
                         <outlet property="dashboardPanGesture" destination="SCc-0n-RGy" id="rZw-Aj-5wi"/>
+                        <outlet property="endImage" destination="kpE-wG-sPX" id="lnb-Eh-0Ib"/>
                         <outlet property="errorPanGesture" destination="1NG-NW-iaQ" id="1RI-qV-UDV"/>
                         <outlet property="homepagePanGesture" destination="5C2-xY-rx8" id="HOc-X5-j9x"/>
                         <outlet property="q4PanGesture" destination="lkF-jg-sxr" id="4pq-z6-TVa"/>
@@ -781,6 +786,7 @@
         <image name="clock-nav" width="21" height="21"/>
         <image name="close" width="18" height="18"/>
         <image name="close-button" width="41" height="41"/>
+        <image name="end" width="184" height="265"/>
         <image name="interview" width="274" height="45"/>
         <image name="ios-for-designers" width="275" height="185"/>
         <image name="list-button" width="20" height="20"/>

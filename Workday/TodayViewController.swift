@@ -62,6 +62,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     var taskPivotalHomePageHeight : CGFloat!
     var taskPivotalRoadmapHeight : CGFloat!
     
+    @IBOutlet weak var endImage: UIImageView!
+    
     @IBOutlet weak var taskOnCalendar: UIView!
     @IBOutlet weak var taskOnCalendarText: UIImageView!
     
@@ -767,19 +769,23 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                         
                         if (self.taskPivotalError != nil) {
                             
+                            self.endImage.alpha = 0
+
                             UIView.animateWithDuration(0.3, animations: { () -> Void in
                                 
                                 self.taskPivotalError.alpha = 0
                                 
                                 }, completion: { (finished: Bool) -> Void in
                                     self.taskPivotalError.removeFromSuperview()
+                                    self.tasksLabel.text = "0 Tasks"
                             })
                             
                             
-                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                            UIView.animateWithDuration(1, delay: 1, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
                                 
-                                self.tasksLabel.text = "1 Task"
-                                println("celebrate!!!!!!!")
+                                self.endImage.hidden = false
+                                self.taskScrollView.backgroundColor = UIColor.whiteColor()
+                                self.endImage.alpha = 1
                                 
                                 
                                 }, completion: nil)
