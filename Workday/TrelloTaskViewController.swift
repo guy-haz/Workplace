@@ -176,7 +176,7 @@ class TrelloTaskViewController: UIViewController, UIViewControllerTransitioningD
                             
                         }) { (finished: Bool) -> Void in
                             
-                            self.smallClock.transform = CGAffineTransformIdentity
+                            self.smallClock.transform = CGAffineTransformMakeScale(1, 1)
                             
                         }
                         

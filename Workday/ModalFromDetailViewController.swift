@@ -26,7 +26,7 @@ class ModalFromDetailViewController: UIViewController {
         let laterButton = UIButton()
         laterButton.setTitle("", forState: .Normal)
         laterButton.frame = CGRectMake(22, 295, 330, 60)
-        laterButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        laterButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         laterButton.addTarget(self, action: "dashboardLaterButtonPressed:", forControlEvents: .TouchUpInside)
         self.view.addSubview(laterButton)
 
