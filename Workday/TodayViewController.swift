@@ -62,6 +62,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     var taskPivotalHomePageHeight : CGFloat!
     var taskPivotalRoadmapHeight : CGFloat!
     
+    @IBOutlet weak var endImage: UIImageView!
+    
     @IBOutlet weak var taskOnCalendar: UIView!
     @IBOutlet weak var taskOnCalendarText: UIImageView!
     
@@ -82,7 +84,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         var defaults = NSUserDefaults.standardUserDefaults()
         var initalVal = defaults.integerForKey("task-read")
         println(" On load NSUserDefaults for task-read is ------------------ is \(initalVal)")
-
+        
+        println("yesssss \(taskTrelloBilling)")
         
         // task dropped on calendar shit
         taskOnCalendar.alpha = 0
@@ -116,6 +119,12 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         taskPivotalRoadmapHeight = taskPivotalRoadmap.image!.size.height
         
         var scrollHeight = taskTrelloBillingHeight + taskTrelloDashboardHeight + taskPivotalErrorHeight + taskPivotalHomePageHeight + taskPivotalRoadmapHeight
+        
+        println("Message \(taskTrelloBillingHeight)")
+        println("Message \(taskTrelloDashboardHeight)")
+        println("Message \(taskPivotalErrorHeight)")
+        println("Message \(taskPivotalHomePageHeight)")
+        println("Message \(taskPivotalRoadmapHeight)")
 
         println("total is \(scrollHeight)")
         
@@ -415,6 +424,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 
                 if translation.x < 0 {
                     clock.alpha = 1
+                    clock.tintColor = UIColor(red: 0.45, green: 0.84, blue: 0.40, alpha: 1.0)
                     clock.center.x = translation.x + 410
                     clock.center.y = tasktoSegue.center.y
 
@@ -621,6 +631,10 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             UIView.animateWithDuration(0.4, delay: 0.5, options: nil, animations: { () -> Void in
                 
                 fromViewController.view.alpha = 0
+<<<<<<< HEAD
+=======
+//                self.tasktoSegue.alpha = 0
+>>>>>>> Henry-Oct-28
 
                 }, completion: { (finished: Bool) -> Void in
                     
@@ -642,10 +656,11 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     //fist task removed
                     if initalVal == 1 {
                         
-                        println("get out of here new hieght is \(scrollHeight1)")
+                        println("number 1")
                         
-                        if (self.taskTrelloDashboard != nil) {
+                        if self.taskTrelloDashboard != nil {
                             
+<<<<<<< HEAD
                             UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                                 self.tasktoSegue.alpha = 0
 
@@ -654,14 +669,28 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                                     self.tasksLabel.text = "4 Tasks"
                             })
                             
+=======
+                            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                                
+                                self.taskTrelloDashboard.alpha = 0
+                                
+                                }, completion: { (finished: Bool) -> Void in
+                                    self.taskTrelloDashboard.removeFromSuperview()
+                            })
+
+>>>>>>> Henry-Oct-28
                             
                             UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
                                 
-                                self.taskPivotalRoadmap.frame.origin.y -= self.taskTrelloDashboardHeight
+                                if self.taskPivotalRoadmap != nil {
+                                 self.taskPivotalRoadmap.frame.origin.y -= self.taskTrelloDashboardHeight
+                                }
                                 self.taskTrelloBilling.frame.origin.y -= self.taskTrelloDashboardHeight
                                 self.taskPivotalError.frame.origin.y -= self.taskTrelloDashboardHeight
                                 self.taskPivotalHomePage.frame.origin.y -= self.taskTrelloDashboardHeight
                                 self.taskScrollView.contentSize.height -= self.taskTrelloDashboardHeight
+                                self.tasksLabel.text = "4 Tasks"
+
                                 
                                 }, completion: nil)
                             
@@ -670,10 +699,19 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     //second task removed
                     } else if initalVal == 2 {
                         
-                        println("get out of here new hieght is \(scrollHeight2)")
+                        println("number 2")
                         
-                        if (self.taskPivotalRoadmap != nil) {
+                        if self.taskPivotalRoadmap != nil {
                             
+                            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                                
+                                self.taskPivotalRoadmap.alpha = 0
+                                
+                                }, completion: { (finished: Bool) -> Void in
+                                    self.taskPivotalRoadmap.removeFromSuperview()
+                            })
+                            
+<<<<<<< HEAD
                             
                             UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                                 self.tasktoSegue.alpha = 0
@@ -683,6 +721,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                                     self.tasksLabel.text = "3 Tasks"
                             })
                             
+=======
+>>>>>>> Henry-Oct-28
                             UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
                                 
                                 self.taskTrelloBilling.frame.origin.y -= self.taskPivotalRoadmapHeight
@@ -693,7 +733,11 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                                 self.calendarHeader.frame.origin.y = 320
                                 self.backToNow.frame.origin.y = 324
                                 self.calendarScrollView.frame = CGRectMake(0, 320, 375, 347)
+<<<<<<< HEAD
 
+=======
+                                self.tasksLabel.text = "3 Tasks"
+>>>>>>> Henry-Oct-28
                                 
                                 }, completion: nil)
                         }
@@ -701,29 +745,86 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     // third task removed
                     } else if initalVal == 3 {
                         
-                        println("get out of here new hieght is \(scrollHeight3)")
+                        println("number 3")
                         
                         if (self.taskPivotalHomePage != nil) {
                             
-                            self.taskPivotalHomePage.removeFromSuperview()
+                            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                                
+                                self.taskPivotalHomePage.alpha = 0
+                                
+                                }, completion: { (finished: Bool) -> Void in
+                                    self.taskPivotalHomePage.removeFromSuperview()
+                            })
+                            
+                            
                             UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
                                 
-//                                self.taskTrelloBilling.frame.origin.y -= self.taskPivotalRoadmapHeight
-//                                self.taskPivotalError.frame.origin.y -= self.taskPivotalRoadmapHeight
-//                                self.taskPivotalHomePage.frame.origin.y -= self.taskPivotalRoadmapHeight
-//                                self.taskScrollView.contentSize.height -= self.taskPivotalRoadmapHeight
-//                                self.taskScrollView.frame = CGRectMake(0, 94, 375, 229)
-//                                self.calendarHeader.frame.origin.y = 320
-//                                self.calendarScrollView.frame = CGRectMake(0, 320, 375, 347)
+                                self.taskTrelloBilling.frame.origin.y -= self.taskPivotalHomePageHeight
+                                self.taskPivotalError.frame.origin.y -= self.taskPivotalHomePageHeight
                                 self.tasksLabel.text = "2 Tasks"
                                 
                                 
                                 }, completion: nil)
                         }
                         
+                    // fourth task removed
+                    } else if initalVal == 4 {
                         
-                    } //
-                    
+                        println("number 4")
+                        
+                        if (self.taskTrelloBilling != nil) {
+                            
+                            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                                
+                                self.taskTrelloBilling.alpha = 0
+                                
+                                }, completion: { (finished: Bool) -> Void in
+                                    self.taskTrelloBilling.removeFromSuperview()
+                            })
+                            
+                            
+                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                                
+                                self.taskPivotalError.frame.origin.y -= self.taskTrelloBillingHeight
+                                self.tasksLabel.text = "1 Task"
+                                
+                                
+                                }, completion: nil)
+                        }
+                        
+                    // last task removed
+                    }  else if initalVal == 5 {
+                        
+                        println("number 5")
+                        
+                        if (self.taskPivotalError != nil) {
+                            
+                            self.endImage.alpha = 0
+
+                            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                                
+                                self.taskPivotalError.alpha = 0
+                                
+                                }, completion: { (finished: Bool) -> Void in
+                                    self.taskPivotalError.removeFromSuperview()
+                                    self.tasksLabel.text = "0 Tasks"
+                            })
+                            
+                            
+                            UIView.animateWithDuration(1, delay: 1, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                                
+                                self.endImage.hidden = false
+                                self.taskScrollView.backgroundColor = UIColor.whiteColor()
+                                self.endImage.alpha = 1
+                                
+                                
+                                }, completion: nil)
+                            
+                        }
+                        
+                    }
+                    // end of modals
                     
             })
             
@@ -754,6 +855,40 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 }
 
             }
+            
+            var movedFromDetail = self.defaults.integerForKey("task-moved")
+            
+            if movedFromDetail == 1 {
+                
+                println("number 1")
+                
+                if self.taskTrelloDashboard != nil {
+                    
+                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+                        
+                        self.taskTrelloDashboard.alpha = 0
+                        
+                        }, completion: { (finished: Bool) -> Void in
+                            self.taskTrelloDashboard.removeFromSuperview()
+                    })
+                    
+                    UIView.animateWithDuration(1, delay: 0.4, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                        
+                        if self.taskPivotalRoadmap != nil {
+                            self.taskPivotalRoadmap.frame.origin.y -= self.taskTrelloDashboardHeight
+                        }
+                        self.taskTrelloBilling.frame.origin.y -= self.taskTrelloDashboardHeight
+                        self.taskPivotalError.frame.origin.y -= self.taskTrelloDashboardHeight
+                        self.taskPivotalHomePage.frame.origin.y -= self.taskTrelloDashboardHeight
+                        self.taskScrollView.contentSize.height -= self.taskTrelloDashboardHeight
+                        self.tasksLabel.text = "4 Tasks"
+                        
+                        }, completion: nil)
+                    
+                }
+                
+            }
+            
             
             let vc = fromViewController as TrelloTaskViewController
             containerView.transform = CGAffineTransformMakeTranslation(0, 0)
