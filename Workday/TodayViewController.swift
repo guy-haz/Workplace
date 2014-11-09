@@ -422,16 +422,25 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 taskScrollView.scrollEnabled = false
                 
                 
-                if translation.x < 0 {
+                if translation.x < 0 && translation.x > -70 {
                     clock.alpha = 1
-                    clock.tintColor = UIColor(red: 0.45, green: 0.84, blue: 0.40, alpha: 1.0)
-                    clock.center.x = translation.x + 410
+                    //clock.tintColor = UIColor(red: 0.45, green: 0.84, blue: 0.40, alpha: 1.0)
+                    clock.center.x = translation.x + 409
                     clock.center.y = tasktoSegue.center.y
 
-                } else if translation.x > 0 {
+                } else if translation.x > 0 && translation.x < 70 {
                     checkmark.alpha = 1
-                    checkmark.center.x = translation.x - 30
+                    checkmark.center.x = translation.x - 32
                     checkmark.center.y = tasktoSegue.center.y
+                    
+                } else if translation.x >= 70 {
+                    
+                    checkmark.alpha = 1
+                    
+                } else if translation.x <= -70 {
+                    
+                    clock.alpha = 1
+                    
                 }
                 
                 
