@@ -169,14 +169,18 @@ class TrelloTaskViewController: UIViewController, UIViewControllerTransitioningD
             
                     if initalVal == 1 {
                         
-                        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+                        UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
                             
                             self.smallClock.hidden = false
                             self.smallClock.transform = CGAffineTransformMakeScale(1.3, 1.3)
                             
                         }) { (finished: Bool) -> Void in
                             
-                            self.smallClock.transform = CGAffineTransformMakeScale(1, 1)
+                            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                                
+                                self.smallClock.transform = CGAffineTransformMakeScale(1, 1)
+
+                            })
                             
                         }
                         
