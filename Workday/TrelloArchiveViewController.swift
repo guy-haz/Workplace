@@ -23,7 +23,7 @@ class TrelloArchiveViewController: UIViewController {
         // Dashboard Task
         if taskPanned == UIImage(named: "trello - dashboard") {
             
-            println("dashboard wireframes")
+            print("dashboard wireframes")
             imageModal.image = UIImage(named: "dashboard-wireframes-modal")
             imageModal.sizeToFit()
             imageModal.frame.origin.y = 137
@@ -38,7 +38,7 @@ class TrelloArchiveViewController: UIViewController {
         // Q4 Road Map Task
         } else if taskPanned == UIImage(named: "pivotal - q4 roadmap") {
             
-            println("Q4 road map")
+            print("Q4 road map")
             imageModal.image = UIImage(named: "roadmap-modal")
             imageModal.sizeToFit()
             imageModal.frame.origin.y = 137
@@ -53,7 +53,7 @@ class TrelloArchiveViewController: UIViewController {
         // Billing info Task
         } else if taskPanned == UIImage(named: "trello - billing info") {
             
-            println("billing info with apple pay")
+            print("billing info with apple pay")
             imageModal.image = UIImage(named: "billing-info-modal")
             imageModal.sizeToFit()
             imageModal.frame.origin.y = 137
@@ -68,7 +68,7 @@ class TrelloArchiveViewController: UIViewController {
         // Error and Warning States
         } else if taskPanned == UIImage(named: "pivotal - error and warning") {
             
-            println("error and wearning states")
+            print("error and wearning states")
             imageModal.image = UIImage(named: "error-states-modal")
             imageModal.sizeToFit()
             imageModal.frame.origin.y = 137
@@ -83,7 +83,7 @@ class TrelloArchiveViewController: UIViewController {
         // Home page Specs
         } else if taskPanned == UIImage(named: "pivotal - home page specs") {
             
-            println("homepage specs")
+            print("homepage specs")
             imageModal.image = UIImage(named: "homepage-modal")
             imageModal.sizeToFit()
             imageModal.frame.origin.y = 137
@@ -104,8 +104,8 @@ class TrelloArchiveViewController: UIViewController {
         
         defaults.setInteger(1, forKey: "task-moved")
         defaults.synchronize()
-        var initalVal = defaults.integerForKey("dashboard-moved")
-        println("On laterButton pressed NSUserDefaults------------------ is \(initalVal)")
+        let initalVal = defaults.integerForKey("dashboard-moved")
+        print("On laterButton pressed NSUserDefaults------------------ is \(initalVal)")
         dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -114,8 +114,8 @@ class TrelloArchiveViewController: UIViewController {
         
         defaults.setInteger(2, forKey: "task-moved")
         defaults.synchronize()
-        var initalVal = defaults.integerForKey("task-moved")
-        println("On laterButton pressed NSUserDefaults------------------ is \(initalVal)")
+        let initalVal = defaults.integerForKey("task-moved")
+        print("On laterButton pressed NSUserDefaults------------------ is \(initalVal)")
         dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -124,8 +124,8 @@ class TrelloArchiveViewController: UIViewController {
         
         defaults.setInteger(3, forKey: "task-moved")
         defaults.synchronize()
-        var initalVal = defaults.integerForKey("task-moved")
-        println("On archive pressed NSUserDefaults------------------ is \(initalVal)")
+        let initalVal = defaults.integerForKey("task-moved")
+        print("On archive pressed NSUserDefaults------------------ is \(initalVal)")
         dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -134,8 +134,8 @@ class TrelloArchiveViewController: UIViewController {
         
         defaults.setInteger(4, forKey: "task-moved")
         defaults.synchronize()
-        var initalVal = defaults.integerForKey("task-moved")
-        println("On archive pressed NSUserDefaults------------------ is \(initalVal)")
+        let initalVal = defaults.integerForKey("task-moved")
+        print("On archive pressed NSUserDefaults------------------ is \(initalVal)")
         dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -144,8 +144,8 @@ class TrelloArchiveViewController: UIViewController {
         
         defaults.setInteger(5, forKey: "task-moved")
         defaults.synchronize()
-        var initalVal = defaults.integerForKey("task-moved")
-        println("On archive pressed NSUserDefaults------------------ is \(initalVal)")
+        let initalVal = defaults.integerForKey("task-moved")
+        print("On archive pressed NSUserDefaults------------------ is \(initalVal)")
         dismissViewControllerAnimated(true, completion: nil)
         
     }

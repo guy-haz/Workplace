@@ -36,14 +36,14 @@ class TomorrowViewController: UIViewController {
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         taskScrollView.insertSubview(refreshControl, atIndex: 0)
         
-        var task1Height = self.task1.image!.size.height
-        var task2Height = task2.image!.size.height
-        var task3Height = task3.image!.size.height
+        let task1Height = self.task1.image!.size.height
+        let task2Height = task2.image!.size.height
+        let task3Height = task3.image!.size.height
         
         task2.frame.origin.y = 0
         task3.frame.origin.y = 0 + task1Height
         
-        var scrollHeight = task1Height + task2Height + task3Height
+        let scrollHeight = task1Height + task2Height + task3Height
         taskScrollView.contentSize = CGSizeMake(375, scrollHeight)
         
         calendarScrollView.contentSize = calendarImage.image!.size
@@ -64,19 +64,19 @@ class TomorrowViewController: UIViewController {
         delay(2, closure: {
             self.refreshControl.endRefreshing()
             
-            var task1Height = self.task1.image!.size.height
-            var task2Height = self.task2.image!.size.height
-            var task3Height = self.task3.image!.size.height
+            let task1Height = self.task1.image!.size.height
+            let task2Height = self.task2.image!.size.height
+            let task3Height = self.task3.image!.size.height
             
-            var initalVal = self.defaults.integerForKey("task-moved")
-            println("On returning NSUserDefaults------------------ is \(initalVal)")
+            let initalVal = self.defaults.integerForKey("task-moved")
+            print("On returning NSUserDefaults------------------ is \(initalVal)")
             
             if initalVal == 2 {
                 
-                println("nailed it")
+                print("nailed it")
                 self.task1.hidden = false
                 
-                UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                     
                     self.task2.frame.origin.y = task1Height
                     self.task3.frame.origin.y = task1Height + task2Height
@@ -95,7 +95,7 @@ class TomorrowViewController: UIViewController {
                 
             }
             
-            var scrollHeight = task1Height + task2Height + task3Height
+            let scrollHeight = task1Height + task2Height + task3Height
             self.taskScrollView.contentSize = CGSizeMake(375, scrollHeight)
             
         })

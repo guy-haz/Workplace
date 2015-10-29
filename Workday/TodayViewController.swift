@@ -81,11 +81,11 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 //        var initalVal = defaults.integerForKey("dashboard-moved")
 //        println(" On load NSUserDefaults------------------ is \(initalVal)")
         
-        var defaults = NSUserDefaults.standardUserDefaults()
-        var initalVal = defaults.integerForKey("task-read")
-        println(" On load NSUserDefaults for task-read is ------------------ is \(initalVal)")
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let initalVal = defaults.integerForKey("task-read")
+        print(" On load NSUserDefaults for task-read is ------------------ is \(initalVal)")
         
-        println("yesssss \(taskTrelloBilling)")
+        print("yesssss \(taskTrelloBilling)")
         
         // task dropped on calendar shit
         taskOnCalendar.alpha = 0
@@ -118,15 +118,15 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         taskPivotalHomePageHeight = taskPivotalHomePage.image!.size.height
         taskPivotalRoadmapHeight = taskPivotalRoadmap.image!.size.height
         
-        var scrollHeight = taskTrelloBillingHeight + taskTrelloDashboardHeight + taskPivotalErrorHeight + taskPivotalHomePageHeight + taskPivotalRoadmapHeight
+        let scrollHeight = taskTrelloBillingHeight + taskTrelloDashboardHeight + taskPivotalErrorHeight + taskPivotalHomePageHeight + taskPivotalRoadmapHeight
         
-        println("Message \(taskTrelloBillingHeight)")
-        println("Message \(taskTrelloDashboardHeight)")
-        println("Message \(taskPivotalErrorHeight)")
-        println("Message \(taskPivotalHomePageHeight)")
-        println("Message \(taskPivotalRoadmapHeight)")
+        print("Message \(taskTrelloBillingHeight)")
+        print("Message \(taskTrelloDashboardHeight)")
+        print("Message \(taskPivotalErrorHeight)")
+        print("Message \(taskPivotalHomePageHeight)")
+        print("Message \(taskPivotalRoadmapHeight)")
 
-        println("total is \(scrollHeight)")
+        print("total is \(scrollHeight)")
         
         billingInfoPanGesture.delegate = self
         errorPanGesture.delegate = self
@@ -144,7 +144,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     
     /*---------Turning on simultaneous gestures--------------------------*/
     
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer!, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer!) -> Bool {
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
     
@@ -152,14 +152,14 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     
     @IBAction func onQ4Tap(sender: UITapGestureRecognizer) {
         
-        tasktoSegue = sender.view as UIImageView
+        tasktoSegue = sender.view as! UIImageView
         performSegueWithIdentifier("dashboardSegue", sender: self)
 
     }
 
     @IBAction func onDashboardTap(sender: UITapGestureRecognizer) {
         
-        tasktoSegue = sender.view as UIImageView
+        tasktoSegue = sender.view as! UIImageView
         performSegueWithIdentifier("dashboardSegue", sender: self)
         
     }
@@ -181,7 +181,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     
     @IBAction func onLongPress1(sender: UILongPressGestureRecognizer) {
         
-        taskOriginal = sender.view as UIImageView!
+        taskOriginal = sender.view as! UIImageView!
         
         taskLocation = sender.locationInView(view)
         
@@ -205,7 +205,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             task1Copy.image = taskOriginal.image
             
             //transform it
-            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: nil, animations:{ () -> Void in
+            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations:{ () -> Void in
                 self.task1Copy.transform = CGAffineTransformMakeScale(1.05, 1.05)
                 }, completion: nil)
             //println("copied at \(taskLocation)")
@@ -233,7 +233,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             
             if task1Copy.center.y < 222 && task1Copy.center.y > 198 && task1Copy.image == UIImage(named: "pivotal - home page specs") {
                 
-                UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: nil, animations:{ () -> Void in
+                UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: [], animations:{ () -> Void in
                     
                     self.taskPivotalError.frame.origin.y = 159
                     self.taskPivotalHomePage.frame.origin.y = 70
@@ -243,7 +243,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             } else if task1Copy.center.y < 158 && task1Copy.center.y > 134 && task1Copy.image == UIImage(named: "pivotal - home page specs") {
                 
                 
-                UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: nil, animations:{ () -> Void in
+                UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: [], animations:{ () -> Void in
                     
                     self.taskTrelloBilling.frame.origin.y = 89
                     self.taskPivotalHomePage.frame.origin.y = 0
@@ -252,17 +252,17 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 
             } else if task1Copy.center.y > 642 && calendarScrollView.contentOffset.y < 1209{
                 
-                println("welcome to the bottom")
+                print("welcome to the bottom")
                 calendarScrollView.contentOffset.y  = calendarScrollView.contentOffset.y + 10
-                println("\(calendarScrollView.contentOffset.y)")
+                print("\(calendarScrollView.contentOffset.y)")
                 
             }
                 
             else if task1Copy.center.y > 407 && task1Copy.center.y < 427 && calendarScrollView.contentOffset.y > 0 {
                 
-                println("welcome to the top")
+                print("welcome to the top")
                 calendarScrollView.contentOffset.y  = calendarScrollView.contentOffset.y - 10
-                println("\(calendarScrollView.contentOffset.y)")
+                print("\(calendarScrollView.contentOffset.y)")
                 
             }
             
@@ -273,7 +273,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             
             //fade out the original copy when it is placed
             
-            println("horse is true")
+            print("horse is true")
 
             
             if task1Copy.center.y < 404 && task1Copy.image == UIImage(named: "pivotal - home page specs") {
@@ -282,7 +282,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     
                     self.task1Copy.transform = CGAffineTransformMakeScale(1, 1)
                     self.task1Copy.layer.shadowOffset = CGSizeMake(0, 0)
-                    var taskFrame = self.view.convertRect(self.taskPivotalHomePage.frame, fromView: self.taskScrollView)
+                    let taskFrame = self.view.convertRect(self.taskPivotalHomePage.frame, fromView: self.taskScrollView)
                     self.task1Copy.frame = taskFrame
                     self.task1Copy.layer.shadowOpacity = 0
                     
@@ -296,7 +296,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 
             } else if task1Copy.center.y > 404 && task1Copy.image == UIImage(named: "trello - billing info") {
                 
-                UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: { () -> Void in
+                UIView.animateWithDuration(0.4, delay: 0, options: [], animations: { () -> Void in
                     
                     self.taskOnCalendar.alpha = 1
                     self.taskOnCalendarText.alpha = 1
@@ -304,7 +304,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     self.taskOnCalendar.layer.cornerRadius = 4
                     self.taskOnCalendar.layer.borderColor =  UIColor(red: 0.27, green: 0.44, blue: 0.63, alpha: 1).CGColor
                     self.taskOriginal.alpha = 1
-                    var taskFrame = self.view.convertRect(self.taskOnCalendar.frame, fromView: self.calendarScrollView)
+                    let taskFrame = self.view.convertRect(self.taskOnCalendar.frame, fromView: self.calendarScrollView)
                     self.task1Copy.frame = taskFrame
                     self.task1Copy.alpha = 0
                     
@@ -322,7 +322,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     self.task1Copy.layer.shadowOffset = CGSizeMake(0, 0)
                     self.task1Copy.alpha = 0
                     self.taskOriginal.alpha = 1.0
-                    var taskFrame = self.view.convertRect(self.taskOriginal.frame, fromView: self.taskScrollView)
+                    let taskFrame = self.view.convertRect(self.taskOriginal.frame, fromView: self.taskScrollView)
                     self.task1Copy.frame = taskFrame
                     
                     }, completion: { (finished: Bool) -> Void in
@@ -350,7 +350,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 
     @IBAction func didPinchTaskOnCalendar(sender: UIPinchGestureRecognizer) {
         
-        println("I am pinching!!!!")
+        print("I am pinching!!!!")
         
         if taskOnCalendar.frame.height < 184 {
             
@@ -380,7 +380,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         taskScrollViewIsScrolling = true
-        println("\(taskScrollViewIsScrolling)")
+        print("\(taskScrollViewIsScrolling)")
     }
     
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -397,11 +397,11 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     
     @IBAction func didPanTask(sender: UIPanGestureRecognizer) {
         
-        tasktoSegue = sender.view as UIImageView
+        tasktoSegue = sender.view as! UIImageView
         
         var location = sender.locationInView(view)
-        var translation = sender.translationInView(view)
-        var velocity = sender.velocityInView(view)
+        let translation = sender.translationInView(view)
+        _ = sender.velocityInView(view)
         
 
         if taskScrollViewIsScrolling == false {
@@ -409,7 +409,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             if sender.state == UIGestureRecognizerState.Began {
                 
                 parentScrollview.scrollEnabled = false
-                println("parent scroll is off")
+                print("parent scroll is off")
                 
                 taskCenter = tasktoSegue.center
                 
@@ -466,7 +466,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 
                 
                 parentScrollview.scrollEnabled = true
-                println("parent scroll is on!")
+                print("parent scroll is on!")
                 taskScrollView.scrollEnabled = true
                 //println("horse is \(taskScrollView.scrollEnabled)")
                 
@@ -480,7 +480,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     
     /*-------------CUSTOM TRANSITIONS------------------------------*/
     
-    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresenting = true
         return self
     }
@@ -497,11 +497,11 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             segueIsModal = true
             segueIsDetail = false
 
-            var modalViewController = segue.destinationViewController as TrelloArchiveViewController
+            let modalViewController = segue.destinationViewController as! TrelloArchiveViewController
             modalViewController.taskPanned = self.tasktoSegue.image
             
-            println("Modal")
-            var destinationVC = segue.destinationViewController as UIViewController
+            print("Modal")
+            let destinationVC = segue.destinationViewController as UIViewController
             destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationVC.transitioningDelegate = self
             
@@ -510,10 +510,10 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             segueIsDetail = true
             segueIsModal = false
             
-            var detailViewController = segue.destinationViewController as TrelloTaskViewController
+            let detailViewController = segue.destinationViewController as! TrelloTaskViewController
             detailViewController.taskTapped = self.tasktoSegue.image
             
-            println("Detail")
+            print("Detail")
             var destinationVC = segue.destinationViewController as UIViewController
             destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationVC.transitioningDelegate = self
@@ -523,30 +523,30 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         
     }
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         // The value here should be the duration of the animations scheduled in the animationTransition method
         return 0.4
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
-        var containerView = transitionContext.containerView()
-        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        let containerView = transitionContext.containerView()
+        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
         
         
         // Modal is Presenting
         if (isPresenting) && segueIsModal == true {
             
-            println("animating Modal TO transition")
+            print("animating Modal TO transition")
             
-            let vc = toViewController as TrelloArchiveViewController
+            let vc = toViewController as! TrelloArchiveViewController
             
             vc.imageModal.transform = CGAffineTransformMakeTranslation(0, 600)
             vc.closeButton.alpha = 0
             
-            containerView.addSubview(toViewController.view)
+            containerView!.addSubview(toViewController.view)
             toViewController.view.alpha = 0
             
             UIView.animateWithDuration(0.4, animations: { () -> Void in
@@ -555,14 +555,14 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 
                 }) { (finished: Bool) -> Void in
                     
-                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                         
                         vc.imageModal.transform = CGAffineTransformMakeTranslation(0, 0)
                         
                     }, completion: nil)
                     
                     
-                    UIView.animateWithDuration(0.5, delay: 0.2, options: nil, animations: { () -> Void in
+                    UIView.animateWithDuration(0.5, delay: 0.2, options: [], animations: { () -> Void in
                         
                         vc.closeButton.alpha = 1
                         
@@ -577,31 +577,31 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         // Detail is Presenting
         } else if (isPresenting) && segueIsDetail == true {
             
-            println("animating Detail TO transition")
+            print("animating Detail TO transition")
             
-            let vc = toViewController as TrelloTaskViewController
+            let vc = toViewController as! TrelloTaskViewController
             
-            containerView.addSubview(toViewController.view)
+            containerView!.addSubview(toViewController.view)
             toViewController.view.alpha = 1
-            containerView.transform = CGAffineTransformMakeTranslation(375, 0)
+            containerView!.transform = CGAffineTransformMakeTranslation(375, 0)
             
-            containerView.layer.shadowColor = UIColor.blackColor().CGColor
-            containerView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-            containerView.layer.shadowOpacity = 0.7
-            containerView.layer.shadowRadius = 2
-            containerView.layer.masksToBounds = true
-            containerView.clipsToBounds = false
+            containerView!.layer.shadowColor = UIColor.blackColor().CGColor
+            containerView!.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+            containerView!.layer.shadowOpacity = 0.7
+            containerView!.layer.shadowRadius = 2
+            containerView!.layer.masksToBounds = true
+            containerView!.clipsToBounds = false
             
             vc.actionBar.transform = CGAffineTransformMakeTranslation(0, 100)
             
             UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 
                 toViewController.view.alpha = 1
-                containerView.transform = CGAffineTransformMakeTranslation(0, 0)
+                containerView!.transform = CGAffineTransformMakeTranslation(0, 0)
                 
                 }) { (finished: Bool) -> Void in
                     
-                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                         
                         vc.actionBar.transform = CGAffineTransformMakeTranslation(0, 0)
                         
@@ -616,28 +616,28 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         // Modal is returning
         } else if segueIsModal == true {
             
-            let vc = fromViewController as TrelloArchiveViewController
+            let vc = fromViewController as! TrelloArchiveViewController
             
-            println("animating Modal FROM transition")
+            print("animating Modal FROM transition")
             
             self.clock.frame.origin.x = 375
             self.checkmark.frame.origin.x = 375
             self.tasktoSegue.alpha = 1
 
             
-            UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: { () -> Void in
+            UIView.animateWithDuration(0.4, delay: 0, options: [], animations: { () -> Void in
                 
                 vc.closeButton.alpha = 0
                 
                 }, completion: nil)
             
-            UIView.animateWithDuration(0.7, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: nil, animations: { () -> Void in
+            UIView.animateWithDuration(0.7, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: [], animations: { () -> Void in
                 
                 vc.imageModal.transform = CGAffineTransformMakeTranslation(0, 600)
                 
                 }, completion: nil)
             
-            UIView.animateWithDuration(0.4, delay: 0.5, options: nil, animations: { () -> Void in
+            UIView.animateWithDuration(0.4, delay: 0.5, options: [], animations: { () -> Void in
                 
                 fromViewController.view.alpha = 0
 
@@ -651,8 +651,8 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     
                     // NSUserDefaults --------------------------------------------------------------------
                     
-                    var initalVal = self.defaults.integerForKey("task-moved")
-                    println("On returning NSUserDefaults------------------ is \(initalVal)")
+                    let initalVal = self.defaults.integerForKey("task-moved")
+                    print("On returning NSUserDefaults------------------ is \(initalVal)")
                     
                     var scrollHeight1 = self.taskTrelloBillingHeight + self.taskPivotalErrorHeight + self.taskPivotalHomePageHeight + self.taskPivotalRoadmapHeight
                     
@@ -663,7 +663,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     //fist task removed
                     if initalVal == 1 {
                         
-                        println("number 1")
+                        print("number 1")
                         
                         if self.taskTrelloDashboard != nil {
                             
@@ -684,7 +684,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                             })
 
                             
-                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                                 
                                 if self.taskPivotalRoadmap != nil {
                                  self.taskPivotalRoadmap.frame.origin.y -= self.taskTrelloDashboardHeight
@@ -703,7 +703,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     //second task removed
                     } else if initalVal == 2 {
                         
-                        println("number 2")
+                        print("number 2")
                         
                         if self.taskPivotalRoadmap != nil {
                             
@@ -724,7 +724,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                                     self.tasksLabel.text = "3 Tasks"
                             })
                             
-                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                                 
                                 self.taskTrelloBilling.frame.origin.y -= self.taskPivotalRoadmapHeight
                                 self.taskPivotalError.frame.origin.y -= self.taskPivotalRoadmapHeight
@@ -743,7 +743,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     // third task removed
                     } else if initalVal == 3 {
                         
-                        println("number 3")
+                        print("number 3")
                         
                         if (self.taskPivotalHomePage != nil) {
                             
@@ -756,7 +756,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                             })
                             
                             
-                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                                 
                                 self.taskTrelloBilling.frame.origin.y -= self.taskPivotalHomePageHeight
                                 self.taskPivotalError.frame.origin.y -= self.taskPivotalHomePageHeight
@@ -769,7 +769,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     // fourth task removed
                     } else if initalVal == 4 {
                         
-                        println("number 4")
+                        print("number 4")
                         
                         if (self.taskTrelloBilling != nil) {
                             
@@ -782,7 +782,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                             })
                             
                             
-                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                            UIView.animateWithDuration(1, delay: 0.01, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                                 
                                 self.taskPivotalError.frame.origin.y -= self.taskTrelloBillingHeight
                                 self.tasksLabel.text = "1 Task"
@@ -794,7 +794,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                     // last task removed
                     }  else if initalVal == 5 {
                         
-                        println("number 5")
+                        print("number 5")
                         
                         if (self.taskPivotalError != nil) {
                             
@@ -810,7 +810,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                             })
                             
                             
-                            UIView.animateWithDuration(1, delay: 1, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                            UIView.animateWithDuration(1, delay: 1, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                                 
                                 self.endImage.hidden = false
                                 self.taskScrollView.backgroundColor = UIColor.whiteColor()
@@ -829,16 +829,16 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         // Detail is returning
         } else if segueIsDetail == true {
             
-            println("animating Detail FROM transition")
+            print("animating Detail FROM transition")
             
-            var initalVal = self.defaults.integerForKey("task-read")
-            println("Tasks Read ------------------ is \(initalVal)")
+            let initalVal = self.defaults.integerForKey("task-read")
+            print("Tasks Read ------------------ is \(initalVal)")
             
             if initalVal == 1 {
                 
                 if (self.unread1 != nil) {
                     
-                    println("task one removed")
+                    print("task one removed")
                     unread1.removeFromSuperview()
                     
                 }
@@ -847,18 +847,18 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                 
                 if (self.unread2 != nil) {
                     
-                    println("task two removed")
+                    print("task two removed")
                     unread2.removeFromSuperview()
                     
                 }
 
             }
             
-            var movedFromDetail = self.defaults.integerForKey("task-moved")
+            let movedFromDetail = self.defaults.integerForKey("task-moved")
             
             if movedFromDetail == 1 {
                 
-                println("number 1")
+                print("number 1")
                 
                 if self.taskTrelloDashboard != nil {
                     
@@ -870,7 +870,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                             self.taskTrelloDashboard.removeFromSuperview()
                     })
                     
-                    UIView.animateWithDuration(1, delay: 0.4, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                    UIView.animateWithDuration(1, delay: 0.4, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                         
                         if self.taskPivotalRoadmap != nil {
                             self.taskPivotalRoadmap.frame.origin.y -= self.taskTrelloDashboardHeight
@@ -888,21 +888,21 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             }
             
             
-            let vc = fromViewController as TrelloTaskViewController
-            containerView.transform = CGAffineTransformMakeTranslation(0, 0)
+            let vc = fromViewController as! TrelloTaskViewController
+            containerView!.transform = CGAffineTransformMakeTranslation(0, 0)
             fromViewController.view.alpha = 1
             
-            containerView.layer.shadowColor = UIColor.blackColor().CGColor
-            containerView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-            containerView.layer.shadowOpacity = 0.7
-            containerView.layer.shadowRadius = 2
-            containerView.layer.masksToBounds = true
-            containerView.clipsToBounds = false
+            containerView!.layer.shadowColor = UIColor.blackColor().CGColor
+            containerView!.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+            containerView!.layer.shadowOpacity = 0.7
+            containerView!.layer.shadowRadius = 2
+            containerView!.layer.masksToBounds = true
+            containerView!.clipsToBounds = false
             
             UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 
                 fromViewController.view.alpha = 1
-                containerView.transform = CGAffineTransformMakeTranslation(375, 0)
+                containerView!.transform = CGAffineTransformMakeTranslation(375, 0)
                 
                 }) { (finished: Bool) -> Void in
                     
