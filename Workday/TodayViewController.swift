@@ -485,7 +485,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         return self
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresenting = false
         return self
     }
@@ -514,7 +514,7 @@ class TodayViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
             detailViewController.taskTapped = self.tasktoSegue.image
             
             print("Detail")
-            var destinationVC = segue.destinationViewController as UIViewController
+            let destinationVC = segue.destinationViewController as UIViewController
             destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationVC.transitioningDelegate = self
             
