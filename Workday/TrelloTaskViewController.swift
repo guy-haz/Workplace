@@ -28,27 +28,27 @@ class TrelloTaskViewController: UIViewController, UIViewControllerTransitioningD
         
         if taskTapped == UIImage(named: "trello - dashboard") {
             
-            println("dashboard wireframes")
+            print("dashboard wireframes")
             taskImage.image = UIImage(named: "trello-card-task")
             navImageView.image = UIImage(named: "trello-card-nav")
             actionBar.image = UIImage(named: "trello-action")
             taskImage.sizeToFit()
             smallClock.hidden = true
-            var initalVal = defaults.integerForKey("task-moved")
+            let initalVal = defaults.integerForKey("task-moved")
             
             if initalVal == 1 {
                 
-                println("now show clock again")
+                print("now show clock again")
                 smallClock.hidden = false
             }
             
             defaults.setInteger(1, forKey: "task-read")
             defaults.synchronize()
-            println("Read One NSUserDefaults------------------ is \(initalVal)")
+            print("Read One NSUserDefaults------------------ is \(initalVal)")
             
         } else if taskTapped == UIImage(named: "pivotal - q4 roadmap") {
             
-            println("Q4 road map")
+            print("Q4 road map")
             taskImage.image = UIImage(named: "pivotal-card-task")
             navImageView.image = UIImage(named: "pivotal-nav-bar")
             actionBar.image = UIImage(named: "pivotal-action")
@@ -56,8 +56,8 @@ class TrelloTaskViewController: UIViewController, UIViewControllerTransitioningD
             
             defaults.setInteger(2, forKey: "task-read")
             defaults.synchronize()
-            var initalVal = defaults.integerForKey("task-read")
-            println("Read Two NSUserDefaults------------------ is \(initalVal)")
+            let initalVal = defaults.integerForKey("task-read")
+            print("Read Two NSUserDefaults------------------ is \(initalVal)")
             
         }
         
@@ -71,45 +71,45 @@ class TrelloTaskViewController: UIViewController, UIViewControllerTransitioningD
     }
     
     
-    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresenting = true
         return self
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresenting = false
         return self
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        var destinationVC = segue.destinationViewController as UIViewController
+        let destinationVC = segue.destinationViewController as UIViewController
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = self
         
     }
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         // The value here should be the duration of the animations scheduled in the animationTransition method
         return 0.4
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        println("animating transition")
-        var containerView = transitionContext.containerView()
-        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        print("animating transition")
+        let containerView = transitionContext.containerView()
+        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
         if (isPresenting) {
             
            
-            println("animating Modal TO transition")
+            print("animating Modal TO transition")
             
-            let vc = toViewController as ModalFromDetailViewController
+            let vc = toViewController as! ModalFromDetailViewController
             
             vc.imageModal.transform = CGAffineTransformMakeTranslation(0, 600)
             vc.closeButton.alpha = 0
             
-            containerView.addSubview(toViewController.view)
+            containerView!.addSubview(toViewController.view)
             toViewController.view.alpha = 0
             
             UIView.animateWithDuration(0.4, animations: { () -> Void in
@@ -118,14 +118,14 @@ class TrelloTaskViewController: UIViewController, UIViewControllerTransitioningD
                 
                 }) { (finished: Bool) -> Void in
                     
-                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: nil, animations: { () -> Void in
+                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
                         
                         vc.imageModal.transform = CGAffineTransformMakeTranslation(0, 0)
                         
                         }, completion: nil)
                     
                     
-                    UIView.animateWithDuration(0.5, delay: 0.2, options: nil, animations: { () -> Void in
+                    UIView.animateWithDuration(0.5, delay: 0.2, options: [], animations: { () -> Void in
                         
                         vc.closeButton.alpha = 1
                         
@@ -139,23 +139,23 @@ class TrelloTaskViewController: UIViewController, UIViewControllerTransitioningD
             
         } else {
             
-            let vc = fromViewController as ModalFromDetailViewController
+            let vc = fromViewController as! ModalFromDetailViewController
             
-            println("animating Modal FROM transition")
+            print("animating Modal FROM transition")
             
-            UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: { () -> Void in
+            UIView.animateWithDuration(0.4, delay: 0, options: [], animations: { () -> Void in
                 
                 vc.closeButton.alpha = 0
                 
                 }, completion: nil)
             
-            UIView.animateWithDuration(0.7, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: nil, animations: { () -> Void in
+            UIView.animateWithDuration(0.7, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: [], animations: { () -> Void in
                 
                 vc.imageModal.transform = CGAffineTransformMakeTranslation(0, 600)
                 
                 }, completion: nil)
             
-            UIView.animateWithDuration(0.4, delay: 0.5, options: nil, animations: { () -> Void in
+            UIView.animateWithDuration(0.4, delay: 0.5, options: [], animations: { () -> Void in
                 
                 fromViewController.view.alpha = 0
                 //                self.tasktoSegue.alpha = 0
@@ -165,11 +165,11 @@ class TrelloTaskViewController: UIViewController, UIViewControllerTransitioningD
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
             
-                    var initalVal = self.defaults.integerForKey("task-moved")
+                    let initalVal = self.defaults.integerForKey("task-moved")
             
                     if initalVal == 1 {
                         
-                        UIView.animateWithDuration(0.3, delay: 0, options: nil, animations: { () -> Void in
+                        UIView.animateWithDuration(0.3, delay: 0, options: [], animations: { () -> Void in
                             
                             self.smallClock.hidden = false
                             self.smallClock.transform = CGAffineTransformMakeScale(1.3, 1.3)

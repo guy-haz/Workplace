@@ -42,8 +42,8 @@ class ModalFromDetailViewController: UIViewController {
         
         defaults.setInteger(1, forKey: "task-moved")
         defaults.synchronize()
-        var initalVal = defaults.integerForKey("task-moved")
-        println("On laterButton pressed NSUserDefaults------------------ is \(initalVal)")
+        let initalVal = defaults.integerForKey("task-moved")
+        print("On laterButton pressed NSUserDefaults------------------ is \(initalVal)")
         dismissViewControllerAnimated(true, completion: nil)
         
     }

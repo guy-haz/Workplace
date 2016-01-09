@@ -70,8 +70,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.delegate = self
             
-        todayViewController = storyboard.instantiateViewControllerWithIdentifier("TodayViewController") as TodayViewController
-        tomorrowViewController = storyboard.instantiateViewControllerWithIdentifier("TomorrowViewController") as TomorrowViewController
+        todayViewController = storyboard.instantiateViewControllerWithIdentifier("TodayViewController") as! TodayViewController
+        tomorrowViewController = storyboard.instantiateViewControllerWithIdentifier("TomorrowViewController") as! TomorrowViewController
         
         todayViewController.parentScrollview = scrollView
         
@@ -95,7 +95,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func didPressOnTodayButton(sender: UIButton) {
         
-        println("today was pushed")
+        print("today was pushed")
     
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             
@@ -116,7 +116,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func didPressTomorrowButton(sender: UIButton) {
         
-        println("tomorrow was pushed")
+        print("tomorrow was pushed")
         
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             
@@ -147,7 +147,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentOffset.x = 375
         
 
-        println("edgeRight")
+        print("edgeRight")
         
         if scrollView.contentOffset.x >= 375 {
             leftEdgeGesture.enabled = true
@@ -159,7 +159,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     func onLeftEdgePan(gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
 //        scrollView.scrollEnabled = true
-        println("edgeLeft")
+        print("edgeLeft")
         scrollView.contentOffset.x = 0
 
     }
@@ -172,13 +172,13 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     // on scrolling
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
-        var offset = scrollView.contentOffset.x
-        println("offset is \(offset)")
+        let offset = scrollView.contentOffset.x
+        print("offset is \(offset)")
         
-        var todaydotScroll = convertValue(offset, r1Min: 0, r1Max: 375, r2Min: 52, r2Max: 65)
-        var tomorrowdotScroll = convertValue(offset, r1Min: 0, r1Max: 375, r2Min: 65, r2Max: 52)
+        let todaydotScroll = convertValue(offset, r1Min: 0, r1Max: 375, r2Min: 52, r2Max: 65)
+        let tomorrowdotScroll = convertValue(offset, r1Min: 0, r1Max: 375, r2Min: 65, r2Max: 52)
         
-        println("new offset is \(todaydotScroll)")
+        print("new offset is \(todaydotScroll)")
         
         if offset > 0 && offset < 375 {
             
@@ -201,7 +201,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func convertValue(value: CGFloat, r1Min: CGFloat, r1Max: CGFloat, r2Min: CGFloat, r2Max: CGFloat) -> CGFloat {
-        var ratio = (r2Max - r2Min) / (r1Max - r1Min)
+        let ratio = (r2Max - r2Min) / (r1Max - r1Min)
         return value * ratio + r2Min - r1Min * ratio
     }
 

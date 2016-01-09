@@ -22,7 +22,7 @@ class AllTasksViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.delegate = self
         
-        var scrollHeight = allTasksImage.image!.size.height + allTasksSearchBar.image!.size.height
+        let scrollHeight = allTasksImage.image!.size.height + allTasksSearchBar.image!.size.height
         
         scrollView.contentSize = CGSizeMake(375, scrollHeight)
         scrollView.contentOffset.y = 44
